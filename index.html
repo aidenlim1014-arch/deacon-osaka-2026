@@ -111,6 +111,20 @@ h1{margin:0;font-size:30px;line-height:1.2;font-weight:900;text-wrap:balance;let
 .credits summary{cursor:pointer;font-weight:700;font-size:14px}
 .credits ul{margin:8px 0 0;padding-left:18px;display:grid;gap:3px}
 .credits li{font-size:12px;color:var(--muted);overflow-wrap:anywhere}
+.modeseg{margin-top:14px}
+.cats{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px}
+.cat{border:1.5px solid var(--line);background:var(--surface);border-radius:14px;padding:10px 12px;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:6px;font-weight:700;font-size:14.5px}
+.cat small{font-family:var(--jp);font-weight:700;font-size:12px;color:var(--muted);background:var(--paper);border-radius:999px;padding:0 8px}
+.cat[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.cat[aria-pressed="true"] small{background:var(--accent);color:var(--accent-ink)}
+.items{display:grid;gap:8px;margin-top:12px}
+.item{display:grid;grid-template-columns:72px 1fr;gap:12px;align-items:center;width:100%;text-align:left;cursor:pointer;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:8px;box-shadow:var(--shadow)}
+.item .ph{aspect-ratio:1/1;border-radius:12px}
+.item .ph .demo{left:4px;bottom:4px;font-size:9.5px;padding:0 5px}
+.item b{display:block;font-size:15px;line-height:1.3}
+.item .meta{display:block;font-size:12px;color:var(--muted);margin:2px 0 4px}
+.noimg{aspect-ratio:1/1;border-radius:12px;background:var(--accent-soft);display:grid;place-items:center;color:var(--accent);font-weight:900;font-size:18px}
+.place.flash{outline:3px solid var(--accent);outline-offset:2px;transition:outline-color 1.2s}
 .empty{color:var(--muted);font-size:13.5px;padding:20px 0}
 
 /* Sheet */
@@ -329,11 +343,11 @@ const AREAS = [
    blurb:{zh:"大阪最有昭和味道的街区，霓虹招牌加上串炸，就在酒店旁边。",en:"Osaka's most retro neighbourhood, all neon signs and kushikatsu, right by the hotel."},
    how:{zh:"出酒店往南走约 8 分钟，看到高高的通天阁就是了。",en:"Walk south about 8 min towards the tall tower."}, mode:"walking",
    places:[
-     {k:"kEat",tags:["classic","xhs"],name:{zh:"串炸 达摩 新世界总本店",en:"Kushikatsu Daruma (main store)"},jp:"串かつだるま 新世界総本店",img:"p-daruma",q:"串かつだるま 新世界総本店",
+     {k:"kEat",tags:["classic","xhs"],name:{zh:"串炸 达摩 新世界总本店",en:"Kushikatsu Daruma (main store)"},cat:"food",dish:"kushikatsu",jp:"串かつだるま 新世界総本店",img:"p-daruma",q:"串かつだるま 新世界総本店",
       what:{zh:"大阪串炸的代表，门口有生气的达摩大叔。牛肉、虾、莲藕都好吃。",en:"Osaka's signature kushikatsu, with the famous angry-chef statue outside. Try beef, prawn and lotus root."},price:"¥1,500–3,000",hours:{zh:"约 11:00–22:30",en:"~11:00–22:30"}},
-     {k:"kEat",tags:["classic","queue"],name:{zh:"八重胜（Jan Jan 横丁）",en:"Yaekatsu (Jan Jan Yokocho)"},jp:"八重勝",img:"p-kushikatsu",q:"八重勝 新世界",
+     {k:"kEat",tags:["classic","queue"],name:{zh:"八重胜（Jan Jan 横丁）",en:"Yaekatsu (Jan Jan Yokocho)"},cat:"food",dish:"kushikatsu",jp:"八重勝",img:"p-kushikatsu",q:"八重勝 新世界",
       what:{zh:"本地人排队的老店，面衣薄脆。门口常排队，但翻桌很快。",en:"A local favourite with light, crisp batter. The queue moves fast."},price:"¥1,500–3,000",hours:{zh:"约 10:30–20:30，周四休",en:"~10:30–20:30, closed Thu"}},
-     {k:"kPhoto",tags:[],name:{zh:"通天阁",en:"Tsutenkaku Tower"},jp:"通天閣",img:"p-tsutenkaku",q:"通天閣",
+     {k:"kPhoto",tags:[],name:{zh:"通天阁",en:"Tsutenkaku Tower"},cat:"sight",jp:"通天閣",img:"p-tsutenkaku",q:"通天閣",
       what:{zh:"上展望台摸一下幸运神「比利肯」的脚底。晚上塔身亮灯，在街口拍最好看。",en:"Rub the soles of Billiken, the god of good luck. The tower lights up at night; shoot it from the street."},price:{zh:"展望台需门票",en:"Ticket for deck"},hours:{zh:"约 10:00–20:00",en:"~10:00–20:00"}}
    ],
    tips:{zh:["串炸的酱汁是共用的，只能蘸一次，咬过的不要再放进去。","免费的卷心菜可以拿来舀酱汁。"],en:["The sauce pot is shared: dip once, never after biting.","Use the free cabbage to scoop extra sauce."]}
@@ -343,11 +357,11 @@ const AREAS = [
    blurb:{zh:"300 米高的全玻璃展望台，楼下是近铁百货。旁边的天王寺公园草坪很适合坐下来休息。",en:"A 300 m glass-walled observatory above the Kintetsu department store, next to a lawn park for a rest."},
    how:{zh:"从新世界往东走约 15 分钟；或走到动物园前站，搭御堂筋线 1 站到「天王寺站」。",en:"Walk about 15 min east from Shinsekai, or take the Midosuji Line 1 stop from Dobutsuen-mae to Tennoji."}, mode:"walking",
    places:[
-     {k:"kPhoto",tags:["xhs"],name:{zh:"HARUKAS 300 展望台",en:"HARUKAS 300 Observatory"},jp:"ハルカス300（展望台）",q:"ハルカス300",
+     {k:"kPhoto",tags:["xhs"],name:{zh:"HARUKAS 300 展望台",en:"HARUKAS 300 Observatory"},cat:"sight",jp:"ハルカス300（展望台）",q:"ハルカス300",
       what:{zh:"58–60 楼的 360 度玻璃展望台。室内不怕风，傍晚看日落转夜景很美。",en:"A 360° glass deck on floors 58–60. Indoors so no wind, and lovely from sunset into night."},price:{zh:"成人约 ¥2,200（前一天网上买较便宜）",en:"Adults ~¥2,200 (cheaper online a day ahead)"},hours:{zh:"9:00–22:00（最后入场 21:30）",en:"9:00–22:00 (last entry 21:30)"}},
-     {k:"kShop",tags:[],name:{zh:"近铁百货 阿倍野 Harukas 本店",en:"Kintetsu Dept. Store Abeno Harukas"},jp:"あべのハルカス近鉄本店",q:"あべのハルカス近鉄本店",
+     {k:"kShop",tags:[],name:{zh:"近铁百货 阿倍野 Harukas 本店",en:"Kintetsu Dept. Store Abeno Harukas"},cat:"dept",jp:"あべのハルカス近鉄本店",q:"あべのハルカス近鉄本店",
       what:{zh:"日本最大级的百货之一，彩妆、服饰、地下美食街都有，有免税柜台。",en:"One of Japan's largest department stores: cosmetics, fashion and a food hall, with a tax-free counter."},price:{zh:"随心",en:"Up to you"},hours:{zh:"约 10:00–20:00",en:"~10:00–20:00"}},
-     {k:"kDo",tags:[],name:{zh:"天芝（天王寺公园草坪）",en:"Tenshiba lawn park"},jp:"てんしば",q:"てんしば",
+     {k:"kDo",tags:[],name:{zh:"天芝（天王寺公园草坪）",en:"Tenshiba lawn park"},cat:"fun",jp:"てんしば",q:"てんしば",
       what:{zh:"大片草坪加咖啡店，逛累了坐下来吹吹风。",en:"A big lawn with cafés. A good place to sit and recharge."},price:{zh:"免费",en:"Free"},hours:{zh:"全天",en:"All day"}}
    ],
    tips:{zh:["高空夜景二选一：蓝天大厦是露天的，Harukas 是室内全玻璃。怕风怕冷就选 Harukas，离酒店也近。"],en:["Choosing one sky view? Umeda Sky Building is open-air; Harukas is indoor glass. Hate wind? Pick Harukas, and it's closer to the hotel."]}
@@ -357,7 +371,7 @@ const AREAS = [
    blurb:{zh:"大阪的秋叶原。扭蛋、公仔、动漫周边一整条街，就在酒店门口。",en:"Osaka's Akihabara: capsule toys, figures and anime goods, right outside the hotel."},
    how:{zh:"酒店出门往北，沿着堺筋走就是。",en:"Step out and walk north along Sakaisuji."}, mode:"walking",
    places:[
-     {k:"kShop",tags:["cheap"],name:{zh:"Otaroad 动漫街",en:"Otaroad"},jp:"オタロード",q:"オタロード 日本橋",
+     {k:"kShop",tags:["cheap"],name:{zh:"Otaroad 动漫街",en:"Otaroad"},cat:"anime",jp:"オタロード",q:"オタロード 日本橋",
       what:{zh:"电电城后面的一条小街，动漫店、扭蛋店最集中。",en:"The side street behind Den Den Town, packed with anime and capsule-toy shops."},price:{zh:"扭蛋 ¥300–500",en:"Capsules ¥300–500"},hours:{zh:"多数 11:00 起",en:"Most from 11:00"}}
    ],
    tips:{zh:["扭蛋机多数只收 ¥100 硬币，店内有换钱机。"],en:["Most capsule machines take ¥100 coins. Change machines are inside."]}
@@ -367,11 +381,11 @@ const AREAS = [
    blurb:{zh:"酒店旁的惠美须町站就是阪堺电车的起点。坐一节车厢的复古路面电车，直达朱红太鼓桥。",en:"Ebisucho, by the hotel, is where the Hankai tram begins. Ride the one-car retro tram straight to the red arched bridge."},
    how:{zh:"惠美须町站搭阪堺电车往南，到「住吉鸟居前」下车，约 25 分钟，一下车就是神社。下车时付钱，交通卡可以用。",en:"Hankai tram south from Ebisucho to Sumiyoshi-toriimae, about 25 min. The shrine is right at the stop. Pay when you get off; IC cards work."}, mode:"transit",
    places:[
-     {k:"kPhoto",tags:["xhs"],name:{zh:"反桥（太鼓桥）",en:"Sorihashi drum bridge"},jp:"住吉大社 反橋",q:"住吉大社 反橋",
+     {k:"kPhoto",tags:["xhs"],name:{zh:"反桥（太鼓桥）",en:"Sorihashi drum bridge"},cat:"sight",jp:"住吉大社 反橋",q:"住吉大社 反橋",
       what:{zh:"从池边拍，桥和倒影会连成一个圆。桥很陡，走的时候抓好扶手。",en:"Shoot from the pond edge so the bridge and reflection form a circle. It's steep; hold the rail."},price:{zh:"免费",en:"Free"},hours:{zh:"10 月 6:30–17:00",en:"Oct 6:30–17:00"}},
-     {k:"kDo",tags:[],name:{zh:"五所御前 · 找「五大力」石",en:"Gosho Gozen · Lucky stones"},jp:"五所御前",q:"住吉大社 五所御前",
+     {k:"kDo",tags:[],name:{zh:"五所御前 · 找「五大力」石",en:"Gosho Gozen · Lucky stones"},cat:"fun",jp:"五所御前",q:"住吉大社 五所御前",
       what:{zh:"在砂地里找写着「五」「大」「力」的小石头放进御守袋，据说能带来五种福气。",en:"Find pebbles marked 五, 大 and 力 and keep them in a charm bag for five kinds of fortune."},price:{zh:"御守另购",en:"Charm bag extra"},hours:{zh:"同上",en:"As above"}},
-     {k:"kShop",tags:[],name:{zh:"楠珺社 · 招福猫",en:"Nanjunsha · Beckoning cats"},jp:"楠珺社",q:"住吉大社 楠珺社",
+     {k:"kShop",tags:[],name:{zh:"楠珺社 · 招福猫",en:"Nanjunsha · Beckoning cats"},cat:"fun",jp:"楠珺社",q:"住吉大社 楠珺社",
       what:{zh:"千年大樟树下的小社，以可爱的招福猫御守出名。款式不一定每天都有，想要的话现场问。",en:"A small shrine under a thousand-year-old camphor tree, known for cute beckoning-cat charms. Ask what's available."},price:{zh:"看款式",en:"Varies"},hours:{zh:"同上",en:"As above"}}
    ],
    tips:{zh:["神社 17:00 关门，建议早上去。周六人比较多，10 点前到拍照最舒服。"],en:["The shrine closes at 17:00, so go in the morning. Saturdays get busy; arrive before 10:00."]}
@@ -381,11 +395,11 @@ const AREAS = [
    blurb:{zh:"世界级的大型水族馆，主水槽有鲸鲨。旁边有大摩天轮和昭和风美食街。下雨天首选。",en:"A world-class aquarium with whale sharks in the main tank, plus a giant Ferris wheel and a retro food street. Perfect for rain."},
    how:{zh:"走到动物园前站，搭御堂筋线到「本町站」换中央线，到「大阪港站」下车走约 5 分钟。",en:"From Dobutsuen-mae take the Midosuji Line to Hommachi, change to the Chuo Line to Osakako, then walk about 5 min."}, mode:"transit",
    places:[
-     {k:"kDo",tags:["xhs"],name:{zh:"海游馆",en:"Osaka Aquarium Kaiyukan"},jp:"海遊館",img:"p-manta",q:"海遊館",
+     {k:"kDo",tags:["xhs"],name:{zh:"海游馆",en:"Osaka Aquarium Kaiyukan"},cat:"fun",jp:"海遊館",img:"p-manta",q:"海遊館",
       what:{zh:"从最顶楼一路往下绕着巨大的主水槽走，鲸鲨、魟鱼就在旁边游过。",en:"Spiral down around the huge central tank as whale sharks and rays glide past."},price:{zh:"成人约 ¥2,400–2,700（按日期）",en:"Adults ~¥2,400–2,700 (by date)"},hours:{zh:"10:00–20:00（最后入场 19:00）",en:"10:00–20:00 (last entry 19:00)"}},
-     {k:"kPhoto",tags:[],name:{zh:"天保山大摩天轮",en:"Tempozan Giant Ferris Wheel"},jp:"天保山大観覧車",q:"天保山大観覧車",
+     {k:"kPhoto",tags:[],name:{zh:"天保山大摩天轮",en:"Tempozan Giant Ferris Wheel"},cat:"sight",jp:"天保山大観覧車",q:"天保山大観覧車",
       what:{zh:"就在海游馆旁边，傍晚坐可以看到大阪湾的夕阳。",en:"Right next to the aquarium. Ride at dusk for a sunset over Osaka Bay."},price:{zh:"需门票",en:"Ticket needed"},hours:{zh:"约 10:00–21:00",en:"~10:00–21:00"}},
-     {k:"kEat",tags:["cheap"],name:{zh:"浪花美食横丁",en:"Naniwa Kuishinbo Yokocho"},jp:"なにわ食いしんぼ横丁",q:"なにわ食いしんぼ横丁",
+     {k:"kEat",tags:["cheap"],name:{zh:"浪花美食横丁",en:"Naniwa Kuishinbo Yokocho"},cat:"food",dish:"snack",jp:"なにわ食いしんぼ横丁",q:"なにわ食いしんぼ横丁",
       what:{zh:"天保山 Marketplace 2 楼重现昭和街道的美食街，章鱼烧、大阪烧、咖喱一次吃到。",en:"A recreated Showa-era food street on 2F of Tempozan Marketplace: takoyaki, okonomiyaki, curry."},price:"¥800–2,000",hours:{zh:"约 11:00–20:00",en:"~11:00–20:00"}}
    ],
    tips:{zh:["先在网上买电子票，现场不用排队。"],en:["Buy e-tickets online to skip the ticket queue."]}
@@ -395,11 +409,11 @@ const AREAS = [
    blurb:{zh:"全长约 2.6 公里、有屋顶的商店街，本地人买菜吃小吃的地方，药妆杂货比心斋桥便宜。",en:"A 2.6 km covered arcade where locals shop and snack. Drugstores and daily goods cost less than in Shinsaibashi."},
    how:{zh:"惠美须町站搭堺筋线往北，直达「天神桥筋六丁目站」，不用换车。从六丁目一路往南逛。",en:"Sakaisuji Line from Ebisucho straight to Tenjimbashisuji 6-chome, no transfers. Stroll south from there."}, mode:"transit",
    places:[
-     {k:"kEat",tags:["classic","cheap","queue"],name:{zh:"中村屋 可乐饼",en:"Nakamuraya croquettes"},jp:"中村屋 コロッケ",img:"p-croquette",q:"中村屋 天神橋 コロッケ",
+     {k:"kEat",tags:["classic","cheap","queue"],name:{zh:"中村屋 可乐饼",en:"Nakamuraya croquettes"},cat:"food",dish:"snack",jp:"中村屋 コロッケ",img:"p-croquette",q:"中村屋 天神橋 コロッケ",
       what:{zh:"排队的现炸可乐饼，一个才一百多日元，热热吃最好。",en:"Freshly fried croquettes for around ¥100 each. Eat them hot."},price:{zh:"约 ¥100 起",en:"From ~¥100"},hours:{zh:"约 9:00–18:30，周日常休",en:"~9:00–18:30, usually closed Sun"}},
-     {k:"kPhoto",tags:[],name:{zh:"大阪天满宫",en:"Osaka Tenmangu Shrine"},jp:"大阪天満宮",q:"大阪天満宮",
+     {k:"kPhoto",tags:[],name:{zh:"大阪天满宫",en:"Osaka Tenmangu Shrine"},cat:"sight",jp:"大阪天満宮",q:"大阪天満宮",
       what:{zh:"供奉学问之神，就在商店街二丁目旁边，逛到这里刚好。",en:"A shrine to the god of learning, right by the arcade's 2-chome end."},price:{zh:"免费",en:"Free"},hours:{zh:"白天",en:"Daytime"}},
-     {k:"kShop",tags:["cheap"],name:{zh:"商店街的药妆与杂货",en:"Arcade drugstores and variety shops"},jp:"天神橋筋商店街",img:"p-tenjin-arcade",q:"天神橋筋商店街",
+     {k:"kShop",tags:["cheap"],name:{zh:"商店街的药妆与杂货",en:"Arcade drugstores and variety shops"},cat:"drug",jp:"天神橋筋商店街",img:"p-tenjin-arcade",q:"天神橋筋商店街",
       what:{zh:"药妆、百元店、杂货一路都是，想比价买药妆的可以来这里。",en:"Drugstores, ¥100 shops and variety stores all the way. Good for price-comparing cosmetics."},price:{zh:"平价",en:"Budget"},hours:{zh:"约 10:00–20:00",en:"~10:00–20:00"}}
    ],
    tips:{zh:["回程：在「南森町站」搭堺筋线，直达惠美须町回酒店。"],en:["Going back: Sakaisuji Line from Minami-morimachi runs straight to Ebisucho."]}
@@ -409,12 +423,14 @@ const AREAS = [
    blurb:{zh:"日系女装、专柜彩妆、下午茶甜点都集中在大阪站周边，全部由地下道连着。",en:"Japanese fashion, cosmetics and cafés around Osaka Station, all linked underground."},
    how:{zh:"酒店走约 8 分钟到「动物园前站」，搭御堂筋线直达「梅田站」，约 15 分钟。",en:"Walk about 8 min to Dobutsuen-mae and ride the Midosuji Line straight to Umeda, about 15 min."}, mode:"transit",
    places:[
-     {k:"kShop",tags:[],name:{zh:"LUCUA osaka",en:"LUCUA osaka"},jp:"ルクア大阪",q:"ルクア大阪",
+     {k:"kShop",tags:[],name:{zh:"LUCUA osaka",en:"LUCUA osaka"},cat:"dept",jp:"ルクア大阪",q:"ルクア大阪",
       what:{zh:"就在 JR 大阪站里，日系女装品牌集中。想找特定品牌先查官网楼层。",en:"Inside JR Osaka Station, full of Japanese womenswear. Check the floor guide online."},price:{zh:"随心",en:"Up to you"},hours:{zh:"约 10:00–20:30",en:"~10:00–20:30"}},
-     {k:"kEat",tags:["xhs","queue"],name:{zh:"HARBS 大丸梅田店（水果千层）",en:"HARBS Daimaru Umeda (fruit crêpe cake)"},jp:"HARBS 大丸梅田店",img:"p-harbs",q:"HARBS 大丸梅田店",
+     {k:"kEat",tags:["xhs","queue"],name:{zh:"HARBS 大丸梅田店（水果千层）",en:"HARBS Daimaru Umeda (fruit crêpe cake)"},cat:"food",dish:"sweets",jp:"HARBS 大丸梅田店",img:"p-harbs",q:"HARBS 大丸梅田店",
       what:{zh:"招牌水果千层蛋糕，一片很大，两个人分刚好。",en:"The famous fruit mille crêpe, big enough to share."},price:"¥1,500–2,500",hours:"11:00–20:00"},
-     {k:"kShop",tags:[],name:{zh:"阪急百货 梅田本店",en:"Hankyu Umeda Main Store"},jp:"阪急うめだ本店",q:"阪急うめだ本店",
-      what:{zh:"日本专柜彩妆最齐的百货之一，有免税柜台。",en:"One of Japan's best stores for cosmetics, with a tax-free counter."},price:{zh:"随心",en:"Up to you"},hours:{zh:"约 10:00–20:00",en:"~10:00–20:00"}}
+     {k:"kShop",tags:[],name:{zh:"阪急百货 梅田本店",en:"Hankyu Umeda Main Store"},cat:"dept",jp:"阪急うめだ本店",q:"阪急うめだ本店",
+      what:{zh:"日本专柜彩妆最齐的百货之一，有免税柜台。",en:"One of Japan's best stores for cosmetics, with a tax-free counter."},price:{zh:"随心",en:"Up to you"},hours:{zh:"约 10:00–20:00",en:"~10:00–20:00"}},
+     {k:"kShop",tags:[],name:{zh:"大黑屋 名牌馆 梅田店（中古名牌）",en:"Daikokuya Brand Store Umeda (pre-loved)"},cat:"luxury",jp:"大黒屋ブランド館 梅田店",q:"大黒屋ブランド館 梅田店",
+      what:{zh:"梅田站 5 号出口走约 2 分钟的中古名牌店，在梅田逛街时可以顺路看中古包。",en:"A pre-loved luxury store about 2 min from Umeda Station Exit 5. Handy while shopping in Umeda."},price:{zh:"随心",en:"Up to you"},hours:{zh:"出发前请查官网",en:"Check online before going"}}
    ],
    tips:{zh:["梅田地下道像迷宫，跟着指示牌上的商场名字走最稳。"],en:["Umeda's underground is a maze. Follow the mall names on the signs."]}
  },
@@ -423,9 +439,9 @@ const AREAS = [
    blurb:{zh:"173 米的露天展望台。十月约 17:40 日落，17:00 上去就能看到黄昏转夜景。",en:"An open-air deck 173 m up. Sunset is about 17:40 in October; go up at 17:00."},
    how:{zh:"先到梅田站，再经过 Grand Front Osaka 走约 10 分钟，跟着「梅田スカイビル」指示走。",en:"Get to Umeda, then walk about 10 min via Grand Front Osaka following signs for 梅田スカイビル."}, mode:"transit",
    places:[
-     {k:"kPhoto",tags:["xhs"],name:{zh:"空中庭园展望台",en:"Kuchu Teien Observatory"},jp:"梅田スカイビル 空中庭園展望台",img:"p-escalator",q:"梅田スカイビル 空中庭園展望台",
+     {k:"kPhoto",tags:["xhs"],name:{zh:"空中庭园展望台",en:"Kuchu Teien Observatory"},cat:"sight",jp:"梅田スカイビル 空中庭園展望台",img:"p-escalator",q:"梅田スカイビル 空中庭園展望台",
       what:{zh:"先搭电梯到 35 楼，再搭悬在两栋楼之间的透明手扶梯上去，这段就很好拍。屋顶是 360 度露天步道。",en:"Lift to 35F, then the glass-tube escalator between the towers, a great photo. The roof is a 360° open-air ring."},price:{zh:"成人 ¥2,000",en:"Adults ¥2,000"},hours:{zh:"9:30–22:30（最后入场 22:00）",en:"9:30–22:30 (last entry 22:00)"}},
-     {k:"kEat",tags:["queue"],name:{zh:"泷见小路 · 大阪烧 きじ",en:"Takimi Koji · Okonomiyaki Kiji"},jp:"滝見小路 お好み焼き きじ",img:"p-okonomiyaki",q:"お好み焼き きじ 梅田スカイビル店",
+     {k:"kEat",tags:["queue"],name:{zh:"泷见小路 · 大阪烧 きじ",en:"Takimi Koji · Okonomiyaki Kiji"},cat:"food",dish:"okonomiyaki",jp:"滝見小路 お好み焼き きじ",img:"p-okonomiyaki",q:"お好み焼き きじ 梅田スカイビル店",
       what:{zh:"大厦地下一楼重现昭和街景的美食小巷，「きじ」是这里最有名的大阪烧。",en:"A recreated Showa-era alley in the basement. Kiji is its best-known okonomiyaki."},price:"¥1,200–2,500",hours:{zh:"11:30–21:30，周四休",en:"11:30–21:30, closed Thu"}}
    ],
    tips:{zh:["屋顶风很大，帽子、长发要顾好，带件薄外套。"],en:["It's windy up top. Hold on to hats and bring a light jacket."]}
@@ -436,11 +452,11 @@ const AREAS = [
    blurb:{zh:"上次跟团时间比较赶？自己回来当早午餐，慢慢吃。",en:"Rushed with the group? Come back for a slow brunch."},
    how:{zh:"沿着堺筋往北走约 15 分钟；或搭堺筋线 1 站到「日本桥站」10 号出口。",en:"Walk north along Sakaisuji about 15 min, or Sakaisuji Line 1 stop to Nippombashi, Exit 10."}, mode:"walking",
    places:[
-     {k:"kEat",tags:["xhs"],name:{zh:"牛兆（和牛串）",en:"Gyucho (wagyu skewers)"},jp:"牛兆 黒門店",q:"牛兆 黒門市場",
+     {k:"kEat",tags:["xhs"],name:{zh:"牛兆（和牛串）",en:"Gyucho (wagyu skewers)"},cat:"food",dish:"meat",jp:"牛兆 黒門店",q:"牛兆 黒門市場",
       what:{zh:"肉铺现烤的和牛串，还有少见的稀有部位。",en:"A butcher grilling wagyu skewers to order, including rarer cuts."},price:"¥1,000–3,000",hours:{zh:"白天",en:"Daytime"}},
-     {k:"kEat",tags:[],name:{zh:"鱼福（烤海鲜）",en:"Uofuku (grilled seafood)"},jp:"魚福",img:"p-kuromon-seafood",q:"魚福 黒門市場",
+     {k:"kEat",tags:[],name:{zh:"鱼福（烤海鲜）",en:"Uofuku (grilled seafood)"},cat:"food",dish:"seafood",jp:"魚福",img:"p-kuromon-seafood",q:"魚福 黒門市場",
       what:{zh:"烤大扇贝、生蚝、海胆。点之前看清楚是一份还是 100g 的价格。",en:"Grilled scallops, oysters, sea urchin. Check if prices are per piece or per 100 g."},price:"¥800–3,000",hours:{zh:"白天",en:"Daytime"}},
-     {k:"kEat",tags:["classic","cheap"],name:{zh:"高桥食品（豆乳布丁）",en:"Takahashi Shokuhin (soy pudding)"},jp:"高橋食品",q:"高橋食品 黒門市場",
+     {k:"kEat",tags:["classic","cheap"],name:{zh:"高桥食品（豆乳布丁）",en:"Takahashi Shokuhin (soy pudding)"},cat:"food",dish:"sweets",jp:"高橋食品",q:"高橋食品 黒門市場",
       what:{zh:"1925 年开业的豆腐老店，豆乳布丁、豆腐甜甜圈当甜点。",en:"Tofu makers since 1925. Soy pudding or tofu doughnuts for dessert."},price:"¥200–500",hours:{zh:"8:00–15:30，周日休",en:"8:00–15:30, closed Sun"}}
    ],
    tips:{zh:["多数店家请你在店旁吃完再走。17:00 左右很多店开始收。"],en:["Most stalls ask you to eat at their counter. Many close around 17:00."]}
@@ -451,21 +467,21 @@ const AREAS = [
    blurb:{zh:"上次只是路过？这里是小红书上最常被推荐的几家，晚上回来慢慢吃、慢慢买。",en:"Only passed through? Here are the most-shared spots on social media for a proper evening visit."},
    how:{zh:"走路约 20 分钟；或搭堺筋线 1 站到「日本桥站」再走 5 分钟。",en:"About 20 min on foot, or Sakaisuji Line 1 stop to Nippombashi then 5 min."}, mode:"walking",
    places:[
-     {k:"kEat",tags:["xhs","queue"],name:{zh:"牛かつ もと村 难波店（炸牛排）",en:"Gyukatsu Motomura Namba"},jp:"牛かつ もと村 なんば店",img:"p-gyukatsu",q:"牛かつ もと村 なんば",
+     {k:"kEat",tags:["xhs","queue"],name:{zh:"牛かつ もと村 难波店（炸牛排）",en:"Gyukatsu Motomura Namba"},cat:"food",dish:"meat",jp:"牛かつ もと村 なんば店",img:"p-gyukatsu",q:"牛かつ もと村 なんば",
       what:{zh:"外面炸得酥脆、里面还是粉红色的炸牛排，自己在小石板上烤到喜欢的熟度。",en:"Crumbed beef cutlet, rare inside. Finish each slice on your own hot stone."},price:"¥1,800–3,500",hours:{zh:"约 11:00–22:00",en:"~11:00–22:00"}},
-     {k:"kEat",tags:["xhs","cheap","queue"],name:{zh:"老爷爷芝士蛋糕 难波本店",en:"Rikuro Ojisan cheesecake"},jp:"りくろーおじさんの店 なんば本店",img:"p-rikuro",q:"りくろーおじさんの店 なんば本店",
+     {k:"kEat",tags:["xhs","cheap","queue"],name:{zh:"老爷爷芝士蛋糕 难波本店",en:"Rikuro Ojisan cheesecake"},cat:"food",dish:"sweets",jp:"りくろーおじさんの店 なんば本店",img:"p-rikuro",q:"りくろーおじさんの店 なんば本店",
       what:{zh:"刚出炉会抖动的日式芝士蛋糕，出炉时店员会摇铃。一整个才一千日元左右。",en:"Wobbly Japanese cheesecake straight from the oven; staff ring a bell when a batch is out. About ¥1,000 a whole cake."},price:"¥1,000",hours:{zh:"约 9:00–20:00",en:"~9:00–20:00"}},
-     {k:"kEat",tags:["xhs"],name:{zh:"一兰拉面 道顿堀店",en:"Ichiran Ramen Dotonbori"},jp:"一蘭 道頓堀店",img:"p-ichiran",q:"一蘭 道頓堀店本館",
+     {k:"kEat",tags:["xhs"],name:{zh:"一兰拉面 道顿堀店",en:"Ichiran Ramen Dotonbori"},cat:"food",dish:"ramen",jp:"一蘭 道頓堀店",img:"p-ichiran",q:"一蘭 道頓堀店本館",
       what:{zh:"一人一格的豚骨拉面，可以自己选浓淡、辣度、面的软硬。深夜也开。",en:"Tonkotsu ramen in private booths. Choose richness, spice and noodle firmness. Open late."},price:"¥1,200–2,000",hours:{zh:"24 小时",en:"24 hours"}},
-     {k:"kEat",tags:["classic"],name:{zh:"章鱼烧 わなか 千日前本店",en:"Takoyaki Wanaka (main store)"},jp:"たこ焼き わなか 千日前本店",img:"p-takoyaki",q:"わなか 千日前本店",
+     {k:"kEat",tags:["classic"],name:{zh:"章鱼烧 わなか 千日前本店",en:"Takoyaki Wanaka (main store)"},cat:"food",dish:"takoyaki",jp:"たこ焼き わなか 千日前本店",img:"p-takoyaki",q:"わなか 千日前本店",
       what:{zh:"大阪人心中的章鱼烧代表，外酥里软，有多种酱汁口味。",en:"A local benchmark for takoyaki: crisp outside, molten inside, with several sauces."},price:"¥600–1,000",hours:{zh:"约 10:00–21:00",en:"~10:00–21:00"}},
-     {k:"kEat",tags:["classic","queue"],name:{zh:"美津の（大阪烧）",en:"Mizuno (okonomiyaki)"},jp:"美津の",img:"p-okonomiyaki",q:"美津の 道頓堀 お好み焼き",
+     {k:"kEat",tags:["classic","queue"],name:{zh:"美津の（大阪烧）",en:"Mizuno (okonomiyaki)"},cat:"food",dish:"okonomiyaki",jp:"美津の",img:"p-okonomiyaki",q:"美津の 道頓堀 お好み焼き",
       what:{zh:"米其林推荐的大阪烧老店，山药烧很有名。",en:"A Michelin-listed okonomiyaki institution, famous for its yam version."},price:"¥1,500–2,500",hours:{zh:"约 11:00–22:00",en:"~11:00–22:00"}},
-     {k:"kEat",tags:["classic","cheap"],name:{zh:"551 蓬莱 本店（肉包）",en:"551 Horai (pork buns)"},jp:"551蓬莱 本店",img:"p-551",q:"551蓬莱 本店 難波",
+     {k:"kEat",tags:["classic","cheap"],name:{zh:"551 蓬莱 本店（肉包）",en:"551 Horai (pork buns)"},cat:"food",dish:"snack",jp:"551蓬莱 本店",img:"p-551",q:"551蓬莱 本店 難波",
       what:{zh:"大阪人最爱的肉包，现蒸很多汁，可以外带。",en:"Osaka's favourite steamed pork buns. Great to take away."},price:"¥300–1,000",hours:{zh:"约 10:00–21:30",en:"~10:00–21:30"}},
-     {k:"kEat",tags:["classic"],name:{zh:"蟹道乐 道顿堀本店",en:"Kani Doraku (main store)"},jp:"かに道楽 道頓堀本店",img:"p-kanidoraku",q:"かに道楽 道頓堀本店",
+     {k:"kEat",tags:["classic"],name:{zh:"蟹道乐 道顿堀本店",en:"Kani Doraku (main store)"},cat:"food",dish:"seafood",jp:"かに道楽 道頓堀本店",img:"p-kanidoraku",q:"かに道楽 道頓堀本店",
       what:{zh:"会动的大螃蟹招牌就是这家。套餐建议先订位；门口也有外卖烤蟹脚。",en:"Home of the moving crab sign. Book for a set meal, or grab grilled crab legs from the front stall."},price:"¥4,000–10,000",hours:{zh:"午餐到晚上",en:"Lunch to late"}},
-     {k:"kShop",tags:[],name:{zh:"唐吉诃德 道顿堀店",en:"Don Quijote Dotonbori"},jp:"ドン・キホーテ道頓堀店",q:"ドン・キホーテ道頓堀店",
+     {k:"kShop",tags:[],name:{zh:"唐吉诃德 道顿堀店",en:"Don Quijote Dotonbori"},cat:"drug",jp:"ドン・キホーテ道頓堀店",q:"ドン・キホーテ道頓堀店",
       what:{zh:"有摩天轮的那栋。药妆、零食、伴手礼集中在一家买，只排一次免税队。",en:"The one with the Ferris wheel. Buy everything in one go and queue for tax-free once."},price:{zh:"看清单",en:"Your list"},hours:{zh:"营业到深夜",en:"Open very late"}}
    ],
    tips:{zh:["晚上人非常多，包包背在前面。","药妆推荐：眼药水、面膜、防晒、休足时间脚贴。"],en:["Very crowded at night. Keep your bag in front.","Popular buys: eye drops, sheet masks, sunscreen, Kyusoku Jikan foot patches."]}
@@ -476,18 +492,32 @@ const AREAS = [
    blurb:{zh:"上次没时间比价？中古名牌几家大店走路 5 分钟内，商店街有屋顶，下雨也能逛。",en:"No time to compare last time? The big resale stores are within 5 min of each other, under a covered arcade."},
    how:{zh:"惠美须町站搭堺筋线 2 站到「长堀桥站」，往西走约 7 分钟。",en:"Sakaisuji Line 2 stops to Nagahoribashi, then walk west about 7 min."}, mode:"transit",
    places:[
-     {k:"kEat",tags:["classic","xhs"],name:{zh:"北极星 心斋桥本店（蛋包饭）",en:"Hokkyokusei (omurice)"},jp:"北極星 心斎橋本店",img:"p-omurice",q:"北極星 心斎橋本店",
+     {k:"kEat",tags:["classic","xhs"],name:{zh:"北极星 心斋桥本店（蛋包饭）",en:"Hokkyokusei (omurice)"},cat:"food",dish:"yoshoku",jp:"北極星 心斎橋本店",img:"p-omurice",q:"北極星 心斎橋本店",
       what:{zh:"号称蛋包饭的发源店，老式日本木屋，坐在榻榻米上吃。",en:"Said to be the birthplace of omurice, served in an old wooden house with tatami seating."},price:"¥1,000–1,800",hours:{zh:"约 11:30–21:30",en:"~11:30–21:30"}},
-     {k:"kShop",tags:[],name:{zh:"KOMEHYO 心斋桥店",en:"KOMEHYO Shinsaibashi"},jp:"コメ兵 心斎橋店",q:"KOMEHYO 心斎橋",
+     {k:"kShop",tags:[],name:{zh:"KOMEHYO 心斋桥店",en:"KOMEHYO Shinsaibashi"},cat:"luxury",jp:"コメ兵 心斎橋店",q:"KOMEHYO 心斎橋",
       what:{zh:"日本最大的中古连锁，货最齐，先来这里看行情。",en:"Japan's biggest resale chain. Start here to learn prices."},price:{zh:"随心",en:"Up to you"},hours:"11:00–20:00"},
-     {k:"kShop",tags:[],name:{zh:"VINTAGE QOO 心斋桥",en:"VINTAGE QOO Shinsaibashi"},jp:"VINTAGE QOO TOKYO 心斎橋",q:"VINTAGE QOO TOKYO 心斎橋",
+     {k:"kShop",tags:[],name:{zh:"VINTAGE QOO 心斋桥",en:"VINTAGE QOO Shinsaibashi"},cat:"luxury",jp:"VINTAGE QOO TOKYO 心斎橋",q:"VINTAGE QOO TOKYO 心斎橋",
       what:{zh:"古董 Chanel、Hermès 为主，店内很美，只看也值得。",en:"Vintage Chanel and Hermès in a beautiful shop."},price:{zh:"随心",en:"Up to you"},hours:"11:30–20:00"},
-     {k:"kShop",tags:[],name:{zh:"大丸 心斋桥店",en:"Daimaru Shinsaibashi"},jp:"大丸心斎橋店",q:"大丸心斎橋店",
+     {k:"kShop",tags:[],name:{zh:"BRAND OFF 心斋桥店",en:"BRAND OFF Shinsaibashi"},cat:"luxury",jp:"ブランドオフ 心斎橋店",q:"BRAND OFF 心斎橋店",
+      what:{zh:"日本老牌中古名牌连锁，在大丸百货旁边大楼的地下一楼（心斋桥日光大楼 B1）。Chanel、LV、Hermès 都多，可以和 KOMEHYO 比价。",en:"A long-running resale chain in the basement (B1) of the building next to Daimaru. Plenty of Chanel, LV and Hermès to compare with KOMEHYO."},price:{zh:"随心",en:"Up to you"},hours:{zh:"11:00–20:00，全年无休",en:"11:00–20:00, open daily"}},
+     {k:"kShop",tags:[],name:{zh:"大丸 心斋桥店",en:"Daimaru Shinsaibashi"},cat:"dept",jp:"大丸心斎橋店",q:"大丸心斎橋店",
       what:{zh:"百货公司，专柜彩妆、名牌都有，有统一免税柜台。",en:"Department store with cosmetics and luxury brands, plus a tax-free counter."},price:{zh:"随心",en:"Up to you"},hours:{zh:"约 10:00–20:00",en:"~10:00–20:00"}}
    ],
-   tips:{zh:["中古成色：N/S 接近全新，A 轻微使用感，AB/B 看得出痕迹。先问清楚再买。"],en:["Grades: N/S near new, A light wear, AB/B visible wear. Ask before buying."]}
+   tips:{zh:["建议顺序：先去 KOMEHYO 看行情 → BRAND OFF 比价 → VINTAGE QOO 看古董款。三家走路都在 5 分钟内。","中古成色：N/S 接近全新，A 轻微使用感，AB/B 看得出痕迹。先问清楚再买。","买满 ¥5,000（税前）可以免税，记得带护照原件。"],en:["Suggested order: KOMEHYO for prices → BRAND OFF to compare → VINTAGE QOO for vintage. All within 5 min on foot.","Grades: N/S near new, A light wear, AB/B visible wear. Ask before buying.","Spend ¥5,000+ before tax for tax-free; bring your original passport."]}
  }
 ];
+
+const CATS = [
+  {id:"food",zh:"美食",en:"Food"},
+  {id:"luxury",zh:"中古名牌包",en:"Pre-loved luxury"},
+  {id:"drug",zh:"药妆 · 杂货",en:"Drugstores"},
+  {id:"dept",zh:"百货 · 商场",en:"Malls"},
+  {id:"anime",zh:"动漫 · 扭蛋",en:"Anime & toys"},
+  {id:"sight",zh:"拍照景点",en:"Photo spots"},
+  {id:"fun",zh:"玩乐 · 参拜",en:"Things to do"}
+];
+const DISHES = {kushikatsu:{zh:"串炸",en:"Kushikatsu"},takoyaki:{zh:"章鱼烧",en:"Takoyaki"},okonomiyaki:{zh:"大阪烧",en:"Okonomiyaki"},ramen:{zh:"拉面",en:"Ramen"},
+  meat:{zh:"牛肉",en:"Beef"},seafood:{zh:"海鲜",en:"Seafood"},sweets:{zh:"甜点",en:"Sweets"},snack:{zh:"小吃",en:"Snacks"},yoshoku:{zh:"蛋包饭",en:"Omurice"}};
 
 const PRESETS = [
   {name:{zh:"高空与逛街",en:"Sky views & shopping"},ids:["tennoji","umeda","skybldg"]},
@@ -600,7 +630,30 @@ function areaCard(a){
   </button>`;
 }
 
+let exMode = "cat", exCat = "food", exDish = "all";
+const catLabel = p => L(CATS.find(c=>c.id===p.cat)) + (p.dish ? " · " + L(DISHES[p.dish]) : "");
+function renderByCat(){
+  const zh = lang === "zh";
+  const all = AREAS.flatMap(a => a.places.map((p,i)=>({a,p,i})));
+  const cnt = id => all.filter(x=>x.p.cat===id).length;
+  let list = all.filter(x => x.p.cat === exCat);
+  const dishes = exCat === "food" ? [...new Set(list.map(x=>x.p.dish))] : [];
+  if (exCat === "food" && exDish !== "all") list = list.filter(x => x.p.dish === exDish);
+  return `<div class="cats" role="group" aria-label="${zh?"类别":"Categories"}">${CATS.map(c=>`<button class="cat" type="button" data-cat="${c.id}" aria-pressed="${exCat===c.id}">${esc(L(c))}<small>${cnt(c.id)}</small></button>`).join("")}</div>
+    ${dishes.length ? `<div class="moods" role="group">${["all",...dishes].map(d=>`<button class="pill" type="button" data-dish="${d}" aria-pressed="${exDish===d}">${esc(d==="all"?L(UI.all):L(DISHES[d]))}</button>`).join("")}</div>` : ""}
+    <div class="items">${list.map(({a,p,i}) => `<button class="item" type="button" data-goto="${a.id}|${i}">
+      ${p.img ? photo(p.img) : `<span class="noimg">${esc(L(CATS.find(c=>c.id===p.cat)).slice(0,1))}</span>`}
+      <span><b>${esc(L(p.name))}</b><span class="meta">${esc(short(a))} · ${esc(a.visited?L(a.visited):L(a.dist))}</span>
+      <span class="tags"><span class="tag">${esc(catLabel(p))}</span>${p.tags.map(t=>`<span class="tag ${t}">${esc(L(UI[t]))}</span>`).join("")}</span></span>
+    </button>`).join("")}</div>`;
+}
 function renderExplore(){
+  const zh = lang === "zh";
+  const seg = `<div class="seg modeseg" role="group"><button type="button" data-exmode="cat" aria-pressed="${exMode==="cat"}">${zh?"按类别找":"By category"}<small>${zh?"吃什么、买什么":"Food, shopping…"}</small></button><button type="button" data-exmode="area" aria-pressed="${exMode==="area"}">${zh?"按地区找":"By area"}<small>${zh?"离酒店多远":"Distance from hotel"}</small></button></div>`;
+  if (exMode === "cat") return seg + renderByCat();
+  return seg + renderByArea();
+}
+function renderByArea(){
   const moods = ["all","eat","shop","photo","night","rain"];
   const list = AREAS.filter(a => mood === "all" || a.moods.includes(mood));
   const sec = (g,t,s) => { const l = list.filter(a=>a.group===g); return l.length ? `<div class="group-h"><h2>${esc(L(t))}</h2><span>${esc(L(s))}</span></div><div class="areas">${l.map(areaCard).join("")}</div>` : ""; };
@@ -610,10 +663,10 @@ function renderExplore(){
 
 function placeCard(a, p, i, showArea){
   const id = pid(a,i);
-  return `<div class="place">
+  return `<div class="place" id="pl-${a.id}-${i}">
     ${photo(p.img,"sm")}
     <div class="place-top"><div>
-      <span class="kind">${esc(L(UI[p.k]))}${showArea?` · ${esc(short(a))}`:""}</span>
+      <span class="kind">${esc(p.cat?catLabel(p):L(UI[p.k]))}${showArea?` · ${esc(short(a))}`:""}</span>
       <h5>${esc(L(p.name))}</h5><div class="jpn">${esc(p.jp)}</div></div>
       <button class="heart" type="button" data-save="${id}" aria-pressed="${!!saved[id]}" aria-label="${esc(L(UI.save))}">${ICON.heart}</button></div>
     ${p.tags.length?`<div class="tags">${p.tags.map(t=>`<span class="tag ${t}">${esc(L(UI[t]))}</span>`).join("")}</div>`:""}
@@ -816,11 +869,17 @@ function togglePick(day, id){
 }
 
 document.addEventListener("click", e => {
-  const t = e.target.closest("[data-tab],[data-mood],[data-area],[data-save],[data-jp],[data-hotel],[data-copy],[data-pick],[data-preset],[data-day],[data-full],[data-setfull],[data-addto],[data-clear],#fab,#sheet-close,#scrim,#driver-close,#lang-zh,#lang-en");
+  const t = e.target.closest("[data-tab],[data-mood],[data-exmode],[data-cat],[data-dish],[data-goto],[data-area],[data-save],[data-jp],[data-hotel],[data-copy],[data-pick],[data-preset],[data-day],[data-full],[data-setfull],[data-addto],[data-clear],#fab,#sheet-close,#scrim,#driver-close,#lang-zh,#lang-en");
   if (!t || t.disabled) return;
   const zh = lang === "zh", d = t.dataset;
   if (d.tab){ if (openArea) closeSheet(); tab = d.tab; history.replaceState(null,"","#"+tab); render(); window.scrollTo({top:document.getElementById("tabs").offsetTop - 4}); }
   else if (d.mood){ mood = d.mood; render(); }
+  else if (d.exmode){ exMode = d.exmode; store.set("osaka-exmode", exMode); keepScroll(render); }
+  else if (d.cat){ exCat = d.cat; exDish = "all"; keepScroll(render); }
+  else if (d.dish){ exDish = d.dish; keepScroll(render); }
+  else if (d.goto){ const [aid, idx] = d.goto.split("|"); openSheet(aid);
+    setTimeout(() => { const el = document.getElementById(`pl-${aid}-${idx}`); if (!el) return; const sh = document.getElementById("sheet");
+      sh.scrollTop = el.offsetTop - 60; el.classList.add("flash"); setTimeout(()=>el.classList.remove("flash"), 1600); }, 80); }
   else if (d.area){ if (openArea){ openArea = d.area; renderSheet(openArea); document.getElementById("sheet").scrollTop = 0; } else openSheet(d.area); }
   else if (d.save){ saved[d.save] = !saved[d.save]; store.set("osaka-saved", saved); keepScroll(render); toast(saved[d.save]?(zh?"已收藏":"Saved"):(zh?"已取消收藏":"Removed")); }
   else if (d.pick){ togglePick(planDay, d.pick); keepScroll(render); }
@@ -843,6 +902,7 @@ document.addEventListener("keydown", e => { if (e.key !== "Escape") return; if (
 (function init(){
   lang = store.get("osaka-lang") || ((navigator.language||"").toLowerCase().startsWith("zh") ? "zh" : "en");
   if (!plans.full) plans.full = {d9:null,d10:null};
+  exMode = store.get("osaka-exmode") || "cat";
   const h = location.hash.slice(1);
   if (["explore","plan","trips","saved","info"].includes(h)) tab = h;
   render();
