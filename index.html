@@ -1,0 +1,853 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Deacon Medical 大阪自由行菜单 · 10/9–10/10">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}</style>
+<title>大阪两日漫游手册</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@500;700;900&display=swap">
+<style>
+:root{
+  --paper:#FBF6F3; --surface:#FFFFFF; --ink:#2A2130; --muted:#786A74; --line:#EBDDE1;
+  --accent:#D6405A; --accent-ink:#FFFFFF; --accent-soft:#FBE4E8;
+  --walk:#2F7D5B; --walk-soft:#E1F1E8; --ride:#3D58A6; --ride-soft:#E4E9F7; --past:#8A6A2E; --past-soft:#F5ECDA;
+  --tip:#FFF4DA; --tip-ink:#6B5210; --warn:#B4441F; --warn-soft:#FCE7DE;
+  --shadow:0 1px 2px rgba(60,20,40,.06),0 6px 20px rgba(60,20,40,.06);
+  --zh:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+  --jp:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Noto Sans JP",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --paper:#18131C; --surface:#231C29; --ink:#F3EAF0; --muted:#B2A2AD; --line:#3A2F40;
+    --accent:#F2718A; --accent-ink:#1E1017; --accent-soft:#3B2231;
+    --walk:#7BCFA6; --walk-soft:#1E3329; --ride:#93A7EC; --ride-soft:#232B47; --past:#E3C27E; --past-soft:#352D1C;
+    --tip:#35301F; --tip-ink:#F2DC9A; --warn:#F59A78; --warn-soft:#3D241B;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.25);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#18131C; --surface:#231C29; --ink:#F3EAF0; --muted:#B2A2AD; --line:#3A2F40;
+  --accent:#F2718A; --accent-ink:#1E1017; --accent-soft:#3B2231;
+  --walk:#7BCFA6; --walk-soft:#1E3329; --ride:#93A7EC; --ride-soft:#232B47; --past:#E3C27E; --past-soft:#352D1C;
+  --tip:#35301F; --tip-ink:#F2DC9A; --warn:#F59A78; --warn-soft:#3D241B;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--paper);color:var(--ink);font-family:var(--zh);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body.lang-en{font-family:var(--jp)}
+.wrap{max-width:560px;margin:0 auto;padding-inline:16px;padding-block:0 110px}
+button{font:inherit;color:inherit}
+a{color:inherit}
+:focus-visible{outline:2.5px solid var(--accent);outline-offset:2px;border-radius:8px}
+.num{font-family:var(--jp);font-variant-numeric:tabular-nums}
+
+/* Cover */
+.cover{padding-block:24px 18px;display:grid;gap:14px}
+.cover-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.eyebrow{font-family:var(--jp);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.lang{display:flex;border:1.5px solid var(--line);border-radius:999px;padding:2px;background:var(--surface);flex:none}
+.lang button{border:0;background:none;padding:4px 12px;border-radius:999px;font-size:13px;font-weight:700;cursor:pointer;color:var(--muted)}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+h1{margin:0;font-size:30px;line-height:1.2;font-weight:900;text-wrap:balance;letter-spacing:-.01em}
+.lang-en h1{font-size:27px}
+.cover p{margin:0;color:var(--muted);max-width:34em}
+.ticket{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;background:var(--surface);border:1.5px dashed var(--line);border-radius:16px;padding:12px 16px}
+.ticket .d{display:grid}
+.ticket .d b{font-family:var(--jp);font-size:20px;font-variant-numeric:tabular-nums}
+.ticket .d span{font-size:12px;color:var(--muted)}
+.ticket .d:last-child{text-align:right}
+.ticket .mid{display:grid;justify-items:center;gap:2px;font-size:10.5px;color:var(--accent);font-weight:700;letter-spacing:.08em}
+.ticket .rail{width:56px;height:2px;background:repeating-linear-gradient(90deg,var(--accent) 0 6px,transparent 6px 10px)}
+.base{background:var(--ink);color:var(--paper);border-radius:20px;padding:16px;display:grid;gap:10px}
+.base small{font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.7;font-family:var(--jp);font-weight:700}
+.base h2{margin:0;font-size:18px;line-height:1.3}
+.base p{margin:0;font-size:13px;opacity:.8}
+.base .btn,.gohome .btn{border-color:var(--paper);background:transparent;color:var(--paper)}
+.base .btn.primary,.gohome .btn.primary{background:var(--paper);color:var(--ink)}
+
+/* Tabs */
+.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);padding-block:10px;display:grid;grid-template-columns:repeat(5,1fr);gap:5px;border-bottom:1px solid var(--line);margin-top:16px}
+.tab{border:1.5px solid var(--line);background:var(--surface);border-radius:12px;padding:8px 2px;cursor:pointer;font-weight:700;font-size:12.5px;line-height:1.2;white-space:nowrap}
+.tab[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.tab .cnt{display:inline-block;min-width:16px;padding:0 4px;margin-left:2px;border-radius:8px;background:var(--accent);color:var(--accent-ink);font-size:10.5px;font-family:var(--jp)}
+
+/* Explore */
+.moods{display:flex;gap:6px;overflow-x:auto;padding-block:14px 4px;scrollbar-width:none}
+.moods::-webkit-scrollbar{display:none}
+.pill{flex:none;border:1.5px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 14px;font-size:13.5px;cursor:pointer;font-weight:500}
+.pill[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:700}
+.group-h{display:grid;gap:0;margin:20px 0 10px}
+.group-h h2{margin:0;font-size:18px;font-weight:900}
+.group-h span{font-size:12.5px;color:var(--muted)}
+.areas{display:grid;gap:10px}
+.area{width:100%;text-align:left;cursor:pointer;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:14px 16px;box-shadow:var(--shadow);display:grid;gap:6px;transition:transform .15s ease}
+.area:active{transform:scale(.985)}
+.area-top{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.dist{font-size:12px;font-weight:700;padding:2px 10px;border-radius:999px;background:var(--walk-soft);color:var(--walk)}
+.dist.ride{background:var(--ride-soft);color:var(--ride)}
+.dist.past{background:var(--past-soft);color:var(--past)}
+.area .count{font-size:12px;color:var(--muted)}
+.area h3{margin:0;font-size:18px;line-height:1.3;font-weight:700;text-wrap:balance}
+.area p{margin:0;font-size:13.5px;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:5px}
+.tag{font-size:11.5px;background:var(--accent-soft);padding:1px 9px;border-radius:999px}
+.tag.xhs{background:var(--accent);color:var(--accent-ink);font-weight:700}
+.tag.classic{background:var(--ink);color:var(--paper)}
+.tag.queue{background:var(--warn-soft);color:var(--warn)}
+.tag.cheap{background:var(--walk-soft);color:var(--walk)}
+.ph{position:relative;display:block;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:var(--line)}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ph.sm{aspect-ratio:16/10;border-radius:12px}
+.ph .demo{position:absolute;left:8px;bottom:8px;background:rgba(20,12,20,.72);color:#FFFFFF;font-size:11px;padding:1px 8px;border-radius:999px}
+.area .ph{margin:-4px -6px 4px;width:calc(100% + 12px);max-width:none}
+.s-hero{margin-bottom:12px}
+.ol .ph{margin-top:6px}
+.credits summary{cursor:pointer;font-weight:700;font-size:14px}
+.credits ul{margin:8px 0 0;padding-left:18px;display:grid;gap:3px}
+.credits li{font-size:12px;color:var(--muted);overflow-wrap:anywhere}
+.empty{color:var(--muted);font-size:13.5px;padding:20px 0}
+
+/* Sheet */
+.scrim{position:fixed;inset:0;background:rgba(20,10,20,.45);z-index:20;opacity:0;pointer-events:none;transition:opacity .2s}
+.scrim.open{opacity:1;pointer-events:auto}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:21;max-width:580px;margin:0 auto;max-height:92vh;overflow-y:auto;background:var(--paper);border-radius:22px 22px 0 0;transform:translateY(102%);transition:transform .28s cubic-bezier(.2,.8,.2,1);padding:0 16px calc(28px + env(safe-area-inset-bottom,0px));overscroll-behavior:contain}
+.sheet.open{transform:none}
+.grab{position:sticky;top:0;background:var(--paper);padding:10px 0 6px;display:flex;z-index:1}
+.grab i{width:40px;height:4px;border-radius:4px;background:var(--line);position:absolute;left:0;right:0;top:8px;margin:0 auto}
+.close{margin-left:auto;margin-top:8px;background:var(--surface);border:1px solid var(--line);width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:18px;line-height:1}
+.s-head{display:grid;gap:6px;padding-bottom:14px}
+.s-head h2{margin:0;font-size:24px;line-height:1.25;font-weight:900;text-wrap:balance}
+.s-head p{margin:0}
+.addto{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.addto span{font-size:12.5px;color:var(--muted)}
+.addto button{border:1.5px dashed var(--accent);background:transparent;color:var(--accent);border-radius:999px;padding:5px 12px;font-size:13px;font-weight:700;cursor:pointer}
+.addto button[aria-pressed="true"]{border-style:solid;background:var(--accent);color:var(--accent-ink)}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px;display:grid;gap:4px;margin-bottom:18px}
+.box b{font-size:13px}
+.box p{margin:0;font-size:13.5px}
+.sec{margin-block:0 18px}
+.sec h4{margin:0 0 8px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-family:var(--jp);font-weight:700}
+.places{display:grid;gap:10px}
+.place{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;display:grid;gap:8px}
+.place-top{display:flex;gap:10px;align-items:flex-start;justify-content:space-between}
+.place h5{margin:0;font-size:16px;line-height:1.35}
+.place .jpn{font-family:var(--jp);font-size:12.5px;color:var(--muted)}
+.place p{margin:0;font-size:13.5px}
+.facts{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:12.5px;color:var(--muted)}
+.facts b{color:var(--ink);font-weight:500}
+.kind{font-size:11px;font-weight:700;color:var(--accent);letter-spacing:.06em}
+.heart{flex:none;width:38px;height:38px;border-radius:50%;border:1.5px solid var(--line);background:var(--paper);cursor:pointer;display:grid;place-items:center;color:var(--muted)}
+.heart[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.btn{display:flex;align-items:center;justify-content:center;gap:6px;padding:10px;border-radius:12px;font-weight:700;font-size:13.5px;text-decoration:none;cursor:pointer;border:1.5px solid var(--ink);background:var(--surface);color:var(--ink);text-align:center;line-height:1.25}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.full{grid-column:1 / -1}
+.tip{background:var(--tip);color:var(--tip-ink);border-radius:14px;padding:12px 14px;display:grid;gap:6px}
+.tip p{margin:0;font-size:13.5px}
+.gohome{display:grid;gap:8px;background:var(--ink);color:var(--paper);border-radius:16px;padding:14px}
+.gohome b{font-size:14px}
+
+/* Panels */
+.panel{padding-block:18px 0;display:grid;gap:14px}
+.panel h2{margin:0;font-size:21px;font-weight:900;text-wrap:balance}
+.panel > p{margin:0;color:var(--muted);font-size:13.5px}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:4px}
+.seg button{border:0;background:none;border-radius:10px;padding:8px;font-weight:700;cursor:pointer;display:grid;line-height:1.3}
+.seg button small{font-size:11.5px;font-weight:500;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.seg button[aria-pressed="true"] small{color:var(--paper);opacity:.75}
+.label{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-family:var(--jp);font-weight:700;margin:0}
+.row{display:flex;gap:6px;flex-wrap:wrap}
+.pick{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pk{border:1.5px solid var(--line);background:var(--surface);border-radius:14px;padding:10px 12px;text-align:left;cursor:pointer;display:grid;gap:2px;line-height:1.3}
+.pk b{font-size:14px}
+.pk small{font-size:11.5px;color:var(--muted)}
+.pk[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.pk[aria-pressed="true"] b::before{content:"✓ ";color:var(--accent)}
+.plan{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px;display:grid;gap:12px;box-shadow:var(--shadow)}
+.plan-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.plan-h h3{margin:0;font-size:17px}
+.clear{border:0;background:none;color:var(--muted);font-size:12.5px;cursor:pointer;text-decoration:underline}
+.steps{list-style:none;margin:0;padding:0;display:grid;counter-reset:s}
+.steps li{display:grid;grid-template-columns:30px 1fr;gap:10px;counter-increment:s;position:relative;padding-bottom:14px}
+.steps li::before{content:counter(s);width:30px;height:30px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-family:var(--jp);font-weight:900;font-size:13px;position:relative;z-index:1}
+.steps li.home::before{content:"⌂";background:var(--accent);color:var(--accent-ink)}
+.steps li:not(:last-child)::after{content:"";position:absolute;left:14px;top:30px;bottom:0;width:2px;background:var(--line)}
+.steps .t{font-family:var(--jp);font-size:12.5px;color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums}
+.steps b{display:block;font-size:15px}
+.steps .d{font-size:12.5px;color:var(--muted);display:block}
+.steps .links{display:flex;gap:12px;flex-wrap:wrap;margin-top:4px}
+.link{border:0;background:none;padding:0;color:var(--accent);font-weight:700;font-size:13px;cursor:pointer;text-align:left;text-decoration:none}
+.warn{background:var(--warn-soft);color:var(--warn);border-radius:12px;padding:8px 12px;font-size:13px}
+.note{font-size:12px;color:var(--muted);margin:0}
+.fullday{background:var(--ink);color:var(--paper);border-radius:18px;padding:16px;display:grid;gap:8px}
+.fullday h3{margin:0;font-size:18px}
+.fullday p{margin:0;font-size:13.5px;opacity:.85}
+.fullday .btn{border-color:var(--paper);background:var(--paper);color:var(--ink)}
+
+/* Day trips */
+.trip{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:18px 16px;display:grid;gap:14px;box-shadow:var(--shadow)}
+.trip-h{display:grid;gap:6px}
+.trip-h h3{margin:0;font-size:22px;font-weight:900;text-wrap:balance}
+.trip-h p{margin:0;font-size:14px}
+.ol{margin:0;padding:0;list-style:none;display:grid;gap:10px;counter-reset:o}
+.ol li{display:grid;grid-template-columns:26px 1fr;gap:10px;counter-increment:o}
+.ol li::before{content:counter(o);width:26px;height:26px;border-radius:8px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-family:var(--jp);font-weight:900;font-size:13px}
+.ol b{display:block;font-size:14.5px}
+.ol span{font-size:13.5px;color:var(--muted)}
+.must{display:grid;gap:6px}
+.must div{display:flex;gap:8px;font-size:13.5px}
+.must div::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:9px}
+
+/* Info */
+.info{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 16px;display:grid;gap:8px}
+.info h3{margin:0;font-size:16px}
+.info p,.info li{margin:0;font-size:13.5px}
+.info ul{margin:0;padding-left:18px;display:grid;gap:4px}
+.tel{display:grid;grid-template-columns:1fr auto;gap:2px 10px;align-items:center;border-top:1px dashed var(--line);padding-top:8px}
+.tel:first-of-type{border-top:0;padding-top:0}
+.tel .who{font-size:13px;color:var(--muted)}
+.tel b{font-family:var(--jp);font-variant-numeric:tabular-nums;user-select:all;font-size:15.5px}
+.tel button{grid-row:1 / span 2;grid-column:2;border:1px solid var(--line);background:var(--paper);border-radius:10px;padding:6px 12px;font-size:12px;cursor:pointer}
+.phrase{display:grid;grid-template-columns:1fr auto;gap:2px 10px;align-items:center;padding:8px 0;border-top:1px dashed var(--line)}
+.phrase:first-of-type{border-top:0}
+.phrase .jp{font-family:var(--jp);font-weight:700;font-size:16px}
+.phrase .ro{font-size:12px;color:var(--muted)}
+.phrase .mean{font-size:12.5px;color:var(--muted)}
+.phrase button{grid-row:1 / span 3;grid-column:2;border:1px solid var(--line);background:var(--paper);border-radius:10px;padding:6px 10px;font-size:12px;cursor:pointer}
+.foot{text-align:center;color:var(--muted);font-size:12px;padding-top:28px}
+
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:10;background:var(--ink);color:var(--paper);border:0;border-radius:999px;padding:12px 18px;font-weight:700;font-size:14px;box-shadow:0 6px 20px rgba(0,0,0,.25);cursor:pointer;display:flex;gap:6px;align-items:center}
+.driver{position:fixed;inset:0;z-index:40;background:#FFFFFF;color:#111111;display:grid;place-items:center;padding:24px 20px calc(24px + env(safe-area-inset-bottom,0px));overflow-y:auto}
+.driver-in{display:grid;gap:20px;text-align:center;max-width:520px}
+.driver .hint{font-size:13px;color:#666666;font-family:var(--zh);margin:0}
+.driver .jp{font-family:var(--jp);font-size:clamp(28px,8.5vw,44px);font-weight:900;line-height:1.45;text-wrap:balance;margin:0}
+.driver .addr{font-family:var(--jp);font-size:17px;color:#333333;margin:0}
+.driver .sub{font-family:var(--jp);font-size:18px;color:#333333;margin:0}
+.driver .dbtns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.driver .dbtns a,.driver .dbtns button{border:2px solid #111111;border-radius:999px;padding:10px 22px;font-weight:700;cursor:pointer;text-decoration:none;font-size:14px}
+.driver .dbtns button{background:#111111;color:#FFFFFF}
+.driver .dbtns a{background:#FFFFFF;color:#111111}
+.toast{position:fixed;left:50%;bottom:calc(76px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:8px 16px;border-radius:999px;font-size:13px;z-index:50;white-space:nowrap}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header class="cover">
+    <div class="cover-top">
+      <span class="eyebrow">Deacon Medical · Osaka 2026</span>
+      <div class="lang" role="group" aria-label="Language">
+        <button id="lang-zh" type="button" aria-pressed="true">中文</button>
+        <button id="lang-en" type="button" aria-pressed="false">EN</button>
+      </div>
+    </div>
+    <h1 data-t="title"></h1>
+    <p data-t="intro"></p>
+    <div class="ticket" aria-hidden="true">
+      <div class="d"><b>10.09</b><span data-t="fri"></span></div>
+      <div class="mid"><span data-t="free"></span><div class="rail"></div></div>
+      <div class="d"><b>10.10</b><span data-t="sat"></span></div>
+    </div>
+    <div class="base" id="base"></div>
+  </header>
+  <nav class="tabs" role="tablist" id="tabs"></nav>
+  <main id="view"></main>
+  <p class="foot" data-t="foot"></p>
+</div>
+
+<button class="fab" type="button" id="fab"></button>
+<div class="scrim" id="scrim"></div>
+<section class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title" aria-hidden="true"></section>
+<div class="driver" id="driver" hidden>
+  <div class="driver-in">
+    <p class="hint" data-t="driverHint"></p>
+    <p class="jp" id="driver-jp"></p>
+    <p class="addr" id="driver-addr"></p>
+    <p class="sub">よろしくお願いします。</p>
+    <div class="dbtns">
+      <a id="driver-map" href="#" target="_blank" rel="noopener" data-t="maps"></a>
+      <button type="button" id="driver-close" data-t="done"></button>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+/* ============================================================
+   内容都在这里改 · Edit all content below
+   ============================================================ */
+const HOTEL = {
+  name:"ANCHORED by RIHGA Osaka Namba", jp:"アンカード・バイ・リーガ大阪なんば",
+  addrJp:"大阪市浪速区日本橋5-6-16", addr:"5-6-16 Nipponbashi, Naniwa-ku, Osaka 556-0005",
+  maps:"ANCHORED by RIHGA Osaka Namba"
+};
+const CONTACTS = [
+  {zh:"领队 Mr Cherng（WhatsApp）",en:"Tour leader Mr Cherng (WhatsApp)",v:{zh:"请看 WhatsApp 团员群",en:"See the WhatsApp group"}},
+  {zh:"导游 Mr Ma（日本手机）",en:"Tour guide Mr Ma (Japan mobile)",v:{zh:"请看 WhatsApp 团员群",en:"See the WhatsApp group"}},
+  {zh:"酒店前台",en:"Hotel front desk",v:"+81 6-6644-1121"}
+];
+
+const UI = {
+  title:{zh:"大阪自由行 · 两天的菜单",en:"Your Osaka Free Days Menu"},
+  intro:{zh:"10/9 和 10/10 是你们的自由时间。有自己的计划就照自己的节奏玩；不知道去哪里的时候，打开这里挑几个地方，「配路线」会帮你排好顺序。每家店都有「带我去」，从你现在的位置导航过去。",en:"9 and 10 October are yours. Have plans? Enjoy them. Not sure? Pick a few places and \"Plan\" will put them in the best order. Every place has \"Take me there\" to navigate from where you are."},
+  fri:{zh:"周五 · 第 5 天",en:"Fri · Day 5"}, sat:{zh:"周六 · 第 6 天",en:"Sat · Day 6"}, free:{zh:"自由活动",en:"FREE DAYS"},
+  baseLabel:{zh:"你的大本营",en:"Your home base"},
+  baseNote:{zh:"惠美须町站走路 2 分钟 · 新世界、电电城就在旁边",en:"2 min from Ebisucho Station · next to Shinsekai & Den Den Town"},
+  explore:{zh:"逛逛",en:"Explore"}, plan:{zh:"配路线",en:"Plan"}, trips:{zh:"一日游",en:"Day trips"}, saved:{zh:"收藏",en:"Saved"}, info:{zh:"须知",en:"Info"},
+  all:{zh:"全部",en:"All"}, eat:{zh:"想吃",en:"Eat"}, shop:{zh:"想买",en:"Shop"}, photo:{zh:"想拍照",en:"Photos"}, night:{zh:"晚上去",en:"Evening"}, rain:{zh:"下雨也 OK",en:"Rainy day"},
+  gWalk:{zh:"酒店走路就到",en:"Walk from the hotel"}, gWalkSub:{zh:"5–15 分钟，随时可以回酒店放东西",en:"5–15 min, easy to pop back to the hotel"},
+  gRide:{zh:"搭一趟车",en:"One ride away"}, gRideSub:{zh:"团体行程没去过的新地方",en:"New places the group tour didn't cover"},
+  gPast:{zh:"团体行程去过 · 回头慢慢逛",en:"Visited with the group · Go back at your own pace"}, gPastSub:{zh:"导游带过的地方，这里是自己回去的吃喝推荐",en:"Places from the guided days, with food picks for a slower return visit"},
+  places:{zh:"家推荐",en:"picks"},
+  fromHotel:{zh:"从酒店怎么去",en:"From the hotel"}, picks:{zh:"推荐",en:"Picks"}, tips:{zh:"小贴士",en:"Good to know"},
+  takeMe:{zh:"带我去",en:"Take me there"}, taxi:{zh:"给司机看",en:"Show taxi driver"}, maps:{zh:"打开地图",en:"Open Maps"},
+  goHome:{zh:"逛完了？回酒店",en:"Done here? Head back"}, walkHome:{zh:"导航回酒店",en:"Directions to hotel"}, taxiHome:{zh:"出租车回酒店",en:"Taxi to hotel"},
+  fab:{zh:"回酒店",en:"Hotel"}, addTo:{zh:"加入路线：",en:"Add to plan:"},
+  kEat:{zh:"吃",en:"EAT"}, kShop:{zh:"买",en:"SHOP"}, kPhoto:{zh:"拍",en:"PHOTO"}, kDo:{zh:"玩",en:"DO"},
+  xhs:{zh:"小红书热门",en:"Viral pick"}, classic:{zh:"必吃老店",en:"Classic"}, queue:{zh:"要排队",en:"Expect a queue"}, cheap:{zh:"平价",en:"Budget"},
+  price:{zh:"价位",en:"Price"}, hours:{zh:"营业",en:"Hours"}, save:{zh:"收藏",en:"Save"},
+  d9:{zh:"10/9 周五",en:"Fri 9 Oct"}, d10:{zh:"10/10 周六",en:"Sat 10 Oct"},
+  done:{zh:"好了",en:"Done"}, copy:{zh:"复制",en:"Copy"}, copied:{zh:"已复制",en:"Copied"},
+  driverHint:{zh:"请把手机给司机看",en:"Show this screen to the driver"},
+  foot:{zh:"营业时间、票价以现场为准 · Uniworld Leisure 为 Deacon Medical 准备",en:"Hours and prices may change · Prepared by Uniworld Leisure for Deacon Medical"}
+};
+
+/* group: walk / ride / past(团体行程去过)
+   pos: 南北位置（越大越北），用来排路线；slot: am 早去 / eve 傍晚后 / any
+   hrs: 建议停留小时；q: Google Maps 搜索词 */
+const AREAS = [
+ { id:"shinsekai", img:"c-shinsekai", group:"walk", pos:-0.8, slot:"any", hrs:1.5, q:"通天閣", moods:["eat","photo","night"],
+   dist:{zh:"走路 8 分钟",en:"8 min walk"}, name:{zh:"新世界 · 通天阁",en:"Shinsekai · Tsutenkaku"},
+   blurb:{zh:"大阪最有昭和味道的街区，霓虹招牌加上串炸，就在酒店旁边。",en:"Osaka's most retro neighbourhood, all neon signs and kushikatsu, right by the hotel."},
+   how:{zh:"出酒店往南走约 8 分钟，看到高高的通天阁就是了。",en:"Walk south about 8 min towards the tall tower."}, mode:"walking",
+   places:[
+     {k:"kEat",tags:["classic","xhs"],name:{zh:"串炸 达摩 新世界总本店",en:"Kushikatsu Daruma (main store)"},jp:"串かつだるま 新世界総本店",img:"p-daruma",q:"串かつだるま 新世界総本店",
+      what:{zh:"大阪串炸的代表，门口有生气的达摩大叔。牛肉、虾、莲藕都好吃。",en:"Osaka's signature kushikatsu, with the famous angry-chef statue outside. Try beef, prawn and lotus root."},price:"¥1,500–3,000",hours:{zh:"约 11:00–22:30",en:"~11:00–22:30"}},
+     {k:"kEat",tags:["classic","queue"],name:{zh:"八重胜（Jan Jan 横丁）",en:"Yaekatsu (Jan Jan Yokocho)"},jp:"八重勝",img:"p-kushikatsu",q:"八重勝 新世界",
+      what:{zh:"本地人排队的老店，面衣薄脆。门口常排队，但翻桌很快。",en:"A local favourite with light, crisp batter. The queue moves fast."},price:"¥1,500–3,000",hours:{zh:"约 10:30–20:30，周四休",en:"~10:30–20:30, closed Thu"}},
+     {k:"kPhoto",tags:[],name:{zh:"通天阁",en:"Tsutenkaku Tower"},jp:"通天閣",img:"p-tsutenkaku",q:"通天閣",
+      what:{zh:"上展望台摸一下幸运神「比利肯」的脚底。晚上塔身亮灯，在街口拍最好看。",en:"Rub the soles of Billiken, the god of good luck. The tower lights up at night; shoot it from the street."},price:{zh:"展望台需门票",en:"Ticket for deck"},hours:{zh:"约 10:00–20:00",en:"~10:00–20:00"}}
+   ],
+   tips:{zh:["串炸的酱汁是共用的，只能蘸一次，咬过的不要再放进去。","免费的卷心菜可以拿来舀酱汁。"],en:["The sauce pot is shared: dip once, never after biting.","Use the free cabbage to scoop extra sauce."]}
+ },
+ { id:"tennoji", img:"c-tennoji", group:"walk", pos:-1.2, slot:"any", hrs:2, q:"あべのハルカス", moods:["photo","shop","night","rain"],
+   dist:{zh:"走路 15 分钟 / 地铁 1 站",en:"15 min walk / 1 stop"}, name:{zh:"天王寺 · 阿倍野 Harukas",en:"Tennoji · Abeno Harukas"},
+   blurb:{zh:"300 米高的全玻璃展望台，楼下是近铁百货。旁边的天王寺公园草坪很适合坐下来休息。",en:"A 300 m glass-walled observatory above the Kintetsu department store, next to a lawn park for a rest."},
+   how:{zh:"从新世界往东走约 15 分钟；或走到动物园前站，搭御堂筋线 1 站到「天王寺站」。",en:"Walk about 15 min east from Shinsekai, or take the Midosuji Line 1 stop from Dobutsuen-mae to Tennoji."}, mode:"walking",
+   places:[
+     {k:"kPhoto",tags:["xhs"],name:{zh:"HARUKAS 300 展望台",en:"HARUKAS 300 Observatory"},jp:"ハルカス300（展望台）",q:"ハルカス300",
+      what:{zh:"58–60 楼的 360 度玻璃展望台。室内不怕风，傍晚看日落转夜景很美。",en:"A 360° glass deck on floors 58–60. Indoors so no wind, and lovely from sunset into night."},price:{zh:"成人约 ¥2,200（前一天网上买较便宜）",en:"Adults ~¥2,200 (cheaper online a day ahead)"},hours:{zh:"9:00–22:00（最后入场 21:30）",en:"9:00–22:00 (last entry 21:30)"}},
+     {k:"kShop",tags:[],name:{zh:"近铁百货 阿倍野 Harukas 本店",en:"Kintetsu Dept. Store Abeno Harukas"},jp:"あべのハルカス近鉄本店",q:"あべのハルカス近鉄本店",
+      what:{zh:"日本最大级的百货之一，彩妆、服饰、地下美食街都有，有免税柜台。",en:"One of Japan's largest department stores: cosmetics, fashion and a food hall, with a tax-free counter."},price:{zh:"随心",en:"Up to you"},hours:{zh:"约 10:00–20:00",en:"~10:00–20:00"}},
+     {k:"kDo",tags:[],name:{zh:"天芝（天王寺公园草坪）",en:"Tenshiba lawn park"},jp:"てんしば",q:"てんしば",
+      what:{zh:"大片草坪加咖啡店，逛累了坐下来吹吹风。",en:"A big lawn with cafés. A good place to sit and recharge."},price:{zh:"免费",en:"Free"},hours:{zh:"全天",en:"All day"}}
+   ],
+   tips:{zh:["高空夜景二选一：蓝天大厦是露天的，Harukas 是室内全玻璃。怕风怕冷就选 Harukas，离酒店也近。"],en:["Choosing one sky view? Umeda Sky Building is open-air; Harukas is indoor glass. Hate wind? Pick Harukas, and it's closer to the hotel."]}
+ },
+ { id:"denden", img:"c-denden", group:"walk", pos:0.2, slot:"any", hrs:1, q:"オタロード 日本橋", moods:["shop","rain"],
+   dist:{zh:"走路 3 分钟",en:"3 min walk"}, name:{zh:"日本桥 电电城 · 动漫街",en:"Den Den Town · Anime Street"},
+   blurb:{zh:"大阪的秋叶原。扭蛋、公仔、动漫周边一整条街，就在酒店门口。",en:"Osaka's Akihabara: capsule toys, figures and anime goods, right outside the hotel."},
+   how:{zh:"酒店出门往北，沿着堺筋走就是。",en:"Step out and walk north along Sakaisuji."}, mode:"walking",
+   places:[
+     {k:"kShop",tags:["cheap"],name:{zh:"Otaroad 动漫街",en:"Otaroad"},jp:"オタロード",q:"オタロード 日本橋",
+      what:{zh:"电电城后面的一条小街，动漫店、扭蛋店最集中。",en:"The side street behind Den Den Town, packed with anime and capsule-toy shops."},price:{zh:"扭蛋 ¥300–500",en:"Capsules ¥300–500"},hours:{zh:"多数 11:00 起",en:"Most from 11:00"}}
+   ],
+   tips:{zh:["扭蛋机多数只收 ¥100 硬币，店内有换钱机。"],en:["Most capsule machines take ¥100 coins. Change machines are inside."]}
+ },
+ { id:"sumiyoshi", img:"c-sumiyoshi", group:"ride", pos:-5, slot:"am", hrs:2, q:"住吉大社", moods:["photo"],
+   dist:{zh:"复古电车 约 25 分钟",en:"~25 min retro tram"}, name:{zh:"住吉大社 · 坐复古电车去",en:"Sumiyoshi Taisha · by Retro Tram"},
+   blurb:{zh:"酒店旁的惠美须町站就是阪堺电车的起点。坐一节车厢的复古路面电车，直达朱红太鼓桥。",en:"Ebisucho, by the hotel, is where the Hankai tram begins. Ride the one-car retro tram straight to the red arched bridge."},
+   how:{zh:"惠美须町站搭阪堺电车往南，到「住吉鸟居前」下车，约 25 分钟，一下车就是神社。下车时付钱，交通卡可以用。",en:"Hankai tram south from Ebisucho to Sumiyoshi-toriimae, about 25 min. The shrine is right at the stop. Pay when you get off; IC cards work."}, mode:"transit",
+   places:[
+     {k:"kPhoto",tags:["xhs"],name:{zh:"反桥（太鼓桥）",en:"Sorihashi drum bridge"},jp:"住吉大社 反橋",q:"住吉大社 反橋",
+      what:{zh:"从池边拍，桥和倒影会连成一个圆。桥很陡，走的时候抓好扶手。",en:"Shoot from the pond edge so the bridge and reflection form a circle. It's steep; hold the rail."},price:{zh:"免费",en:"Free"},hours:{zh:"10 月 6:30–17:00",en:"Oct 6:30–17:00"}},
+     {k:"kDo",tags:[],name:{zh:"五所御前 · 找「五大力」石",en:"Gosho Gozen · Lucky stones"},jp:"五所御前",q:"住吉大社 五所御前",
+      what:{zh:"在砂地里找写着「五」「大」「力」的小石头放进御守袋，据说能带来五种福气。",en:"Find pebbles marked 五, 大 and 力 and keep them in a charm bag for five kinds of fortune."},price:{zh:"御守另购",en:"Charm bag extra"},hours:{zh:"同上",en:"As above"}},
+     {k:"kShop",tags:[],name:{zh:"楠珺社 · 招福猫",en:"Nanjunsha · Beckoning cats"},jp:"楠珺社",q:"住吉大社 楠珺社",
+      what:{zh:"千年大樟树下的小社，以可爱的招福猫御守出名。款式不一定每天都有，想要的话现场问。",en:"A small shrine under a thousand-year-old camphor tree, known for cute beckoning-cat charms. Ask what's available."},price:{zh:"看款式",en:"Varies"},hours:{zh:"同上",en:"As above"}}
+   ],
+   tips:{zh:["神社 17:00 关门，建议早上去。周六人比较多，10 点前到拍照最舒服。"],en:["The shrine closes at 17:00, so go in the morning. Saturdays get busy; arrive before 10:00."]}
+ },
+ { id:"kaiyukan", img:"c-kaiyukan", group:"ride", pos:3.5, slot:"any", hrs:3, q:"海遊館", moods:["photo","rain"],
+   dist:{zh:"地铁约 30 分钟",en:"~30 min by metro"}, name:{zh:"海游馆 · 天保山",en:"Kaiyukan Aquarium · Tempozan"},
+   blurb:{zh:"世界级的大型水族馆，主水槽有鲸鲨。旁边有大摩天轮和昭和风美食街。下雨天首选。",en:"A world-class aquarium with whale sharks in the main tank, plus a giant Ferris wheel and a retro food street. Perfect for rain."},
+   how:{zh:"走到动物园前站，搭御堂筋线到「本町站」换中央线，到「大阪港站」下车走约 5 分钟。",en:"From Dobutsuen-mae take the Midosuji Line to Hommachi, change to the Chuo Line to Osakako, then walk about 5 min."}, mode:"transit",
+   places:[
+     {k:"kDo",tags:["xhs"],name:{zh:"海游馆",en:"Osaka Aquarium Kaiyukan"},jp:"海遊館",img:"p-manta",q:"海遊館",
+      what:{zh:"从最顶楼一路往下绕着巨大的主水槽走，鲸鲨、魟鱼就在旁边游过。",en:"Spiral down around the huge central tank as whale sharks and rays glide past."},price:{zh:"成人约 ¥2,400–2,700（按日期）",en:"Adults ~¥2,400–2,700 (by date)"},hours:{zh:"10:00–20:00（最后入场 19:00）",en:"10:00–20:00 (last entry 19:00)"}},
+     {k:"kPhoto",tags:[],name:{zh:"天保山大摩天轮",en:"Tempozan Giant Ferris Wheel"},jp:"天保山大観覧車",q:"天保山大観覧車",
+      what:{zh:"就在海游馆旁边，傍晚坐可以看到大阪湾的夕阳。",en:"Right next to the aquarium. Ride at dusk for a sunset over Osaka Bay."},price:{zh:"需门票",en:"Ticket needed"},hours:{zh:"约 10:00–21:00",en:"~10:00–21:00"}},
+     {k:"kEat",tags:["cheap"],name:{zh:"浪花美食横丁",en:"Naniwa Kuishinbo Yokocho"},jp:"なにわ食いしんぼ横丁",q:"なにわ食いしんぼ横丁",
+      what:{zh:"天保山 Marketplace 2 楼重现昭和街道的美食街，章鱼烧、大阪烧、咖喱一次吃到。",en:"A recreated Showa-era food street on 2F of Tempozan Marketplace: takoyaki, okonomiyaki, curry."},price:"¥800–2,000",hours:{zh:"约 11:00–20:00",en:"~11:00–20:00"}}
+   ],
+   tips:{zh:["先在网上买电子票，现场不用排队。"],en:["Buy e-tickets online to skip the ticket queue."]}
+ },
+ { id:"tenjinbashi", img:"c-tenjinbashi", group:"ride", pos:5.5, slot:"any", hrs:1.5, q:"天神橋筋商店街", moods:["eat","shop","rain"],
+   dist:{zh:"地铁直达 约 15 分钟",en:"~15 min direct metro"}, name:{zh:"天神桥筋 · 日本最长商店街",en:"Tenjinbashisuji · Japan's Longest Arcade"},
+   blurb:{zh:"全长约 2.6 公里、有屋顶的商店街，本地人买菜吃小吃的地方，药妆杂货比心斋桥便宜。",en:"A 2.6 km covered arcade where locals shop and snack. Drugstores and daily goods cost less than in Shinsaibashi."},
+   how:{zh:"惠美须町站搭堺筋线往北，直达「天神桥筋六丁目站」，不用换车。从六丁目一路往南逛。",en:"Sakaisuji Line from Ebisucho straight to Tenjimbashisuji 6-chome, no transfers. Stroll south from there."}, mode:"transit",
+   places:[
+     {k:"kEat",tags:["classic","cheap","queue"],name:{zh:"中村屋 可乐饼",en:"Nakamuraya croquettes"},jp:"中村屋 コロッケ",img:"p-croquette",q:"中村屋 天神橋 コロッケ",
+      what:{zh:"排队的现炸可乐饼，一个才一百多日元，热热吃最好。",en:"Freshly fried croquettes for around ¥100 each. Eat them hot."},price:{zh:"约 ¥100 起",en:"From ~¥100"},hours:{zh:"约 9:00–18:30，周日常休",en:"~9:00–18:30, usually closed Sun"}},
+     {k:"kPhoto",tags:[],name:{zh:"大阪天满宫",en:"Osaka Tenmangu Shrine"},jp:"大阪天満宮",q:"大阪天満宮",
+      what:{zh:"供奉学问之神，就在商店街二丁目旁边，逛到这里刚好。",en:"A shrine to the god of learning, right by the arcade's 2-chome end."},price:{zh:"免费",en:"Free"},hours:{zh:"白天",en:"Daytime"}},
+     {k:"kShop",tags:["cheap"],name:{zh:"商店街的药妆与杂货",en:"Arcade drugstores and variety shops"},jp:"天神橋筋商店街",img:"p-tenjin-arcade",q:"天神橋筋商店街",
+      what:{zh:"药妆、百元店、杂货一路都是，想比价买药妆的可以来这里。",en:"Drugstores, ¥100 shops and variety stores all the way. Good for price-comparing cosmetics."},price:{zh:"平价",en:"Budget"},hours:{zh:"约 10:00–20:00",en:"~10:00–20:00"}}
+   ],
+   tips:{zh:["回程：在「南森町站」搭堺筋线，直达惠美须町回酒店。"],en:["Going back: Sakaisuji Line from Minami-morimachi runs straight to Ebisucho."]}
+ },
+ { id:"umeda", img:"c-umeda", group:"ride", pos:6, slot:"any", hrs:3, q:"ルクア大阪", moods:["shop","eat","rain"],
+   dist:{zh:"地铁约 15 分钟",en:"~15 min by metro"}, name:{zh:"梅田 · 大阪站商场",en:"Umeda · Osaka Station Malls"},
+   blurb:{zh:"日系女装、专柜彩妆、下午茶甜点都集中在大阪站周边，全部由地下道连着。",en:"Japanese fashion, cosmetics and cafés around Osaka Station, all linked underground."},
+   how:{zh:"酒店走约 8 分钟到「动物园前站」，搭御堂筋线直达「梅田站」，约 15 分钟。",en:"Walk about 8 min to Dobutsuen-mae and ride the Midosuji Line straight to Umeda, about 15 min."}, mode:"transit",
+   places:[
+     {k:"kShop",tags:[],name:{zh:"LUCUA osaka",en:"LUCUA osaka"},jp:"ルクア大阪",q:"ルクア大阪",
+      what:{zh:"就在 JR 大阪站里，日系女装品牌集中。想找特定品牌先查官网楼层。",en:"Inside JR Osaka Station, full of Japanese womenswear. Check the floor guide online."},price:{zh:"随心",en:"Up to you"},hours:{zh:"约 10:00–20:30",en:"~10:00–20:30"}},
+     {k:"kEat",tags:["xhs","queue"],name:{zh:"HARBS 大丸梅田店（水果千层）",en:"HARBS Daimaru Umeda (fruit crêpe cake)"},jp:"HARBS 大丸梅田店",img:"p-harbs",q:"HARBS 大丸梅田店",
+      what:{zh:"招牌水果千层蛋糕，一片很大，两个人分刚好。",en:"The famous fruit mille crêpe, big enough to share."},price:"¥1,500–2,500",hours:"11:00–20:00"},
+     {k:"kShop",tags:[],name:{zh:"阪急百货 梅田本店",en:"Hankyu Umeda Main Store"},jp:"阪急うめだ本店",q:"阪急うめだ本店",
+      what:{zh:"日本专柜彩妆最齐的百货之一，有免税柜台。",en:"One of Japan's best stores for cosmetics, with a tax-free counter."},price:{zh:"随心",en:"Up to you"},hours:{zh:"约 10:00–20:00",en:"~10:00–20:00"}}
+   ],
+   tips:{zh:["梅田地下道像迷宫，跟着指示牌上的商场名字走最稳。"],en:["Umeda's underground is a maze. Follow the mall names on the signs."]}
+ },
+ { id:"skybldg", img:"c-skybldg", group:"ride", pos:6.5, slot:"eve", hrs:2.5, q:"梅田スカイビル", moods:["photo","night","eat"],
+   dist:{zh:"地铁 15 分钟 + 走 10 分钟",en:"15 min metro + 10 min walk"}, name:{zh:"梅田蓝天大厦 · 高空日落",en:"Umeda Sky Building · Sunset"},
+   blurb:{zh:"173 米的露天展望台。十月约 17:40 日落，17:00 上去就能看到黄昏转夜景。",en:"An open-air deck 173 m up. Sunset is about 17:40 in October; go up at 17:00."},
+   how:{zh:"先到梅田站，再经过 Grand Front Osaka 走约 10 分钟，跟着「梅田スカイビル」指示走。",en:"Get to Umeda, then walk about 10 min via Grand Front Osaka following signs for 梅田スカイビル."}, mode:"transit",
+   places:[
+     {k:"kPhoto",tags:["xhs"],name:{zh:"空中庭园展望台",en:"Kuchu Teien Observatory"},jp:"梅田スカイビル 空中庭園展望台",img:"p-escalator",q:"梅田スカイビル 空中庭園展望台",
+      what:{zh:"先搭电梯到 35 楼，再搭悬在两栋楼之间的透明手扶梯上去，这段就很好拍。屋顶是 360 度露天步道。",en:"Lift to 35F, then the glass-tube escalator between the towers, a great photo. The roof is a 360° open-air ring."},price:{zh:"成人 ¥2,000",en:"Adults ¥2,000"},hours:{zh:"9:30–22:30（最后入场 22:00）",en:"9:30–22:30 (last entry 22:00)"}},
+     {k:"kEat",tags:["queue"],name:{zh:"泷见小路 · 大阪烧 きじ",en:"Takimi Koji · Okonomiyaki Kiji"},jp:"滝見小路 お好み焼き きじ",img:"p-okonomiyaki",q:"お好み焼き きじ 梅田スカイビル店",
+      what:{zh:"大厦地下一楼重现昭和街景的美食小巷，「きじ」是这里最有名的大阪烧。",en:"A recreated Showa-era alley in the basement. Kiji is its best-known okonomiyaki."},price:"¥1,200–2,500",hours:{zh:"11:30–21:30，周四休",en:"11:30–21:30, closed Thu"}}
+   ],
+   tips:{zh:["屋顶风很大，帽子、长发要顾好，带件薄外套。"],en:["It's windy up top. Hold on to hats and bring a light jacket."]}
+ },
+ { id:"kuromon", img:"c-kuromon", group:"past", pos:1, slot:"am", hrs:1.5, q:"黒門市場", moods:["eat"],
+   visited:{zh:"第 4 天导游带过",en:"Visited on Day 4"},
+   dist:{zh:"走路 15 分钟",en:"15 min walk"}, name:{zh:"黑门市场",en:"Kuromon Market"},
+   blurb:{zh:"上次跟团时间比较赶？自己回来当早午餐，慢慢吃。",en:"Rushed with the group? Come back for a slow brunch."},
+   how:{zh:"沿着堺筋往北走约 15 分钟；或搭堺筋线 1 站到「日本桥站」10 号出口。",en:"Walk north along Sakaisuji about 15 min, or Sakaisuji Line 1 stop to Nippombashi, Exit 10."}, mode:"walking",
+   places:[
+     {k:"kEat",tags:["xhs"],name:{zh:"牛兆（和牛串）",en:"Gyucho (wagyu skewers)"},jp:"牛兆 黒門店",q:"牛兆 黒門市場",
+      what:{zh:"肉铺现烤的和牛串，还有少见的稀有部位。",en:"A butcher grilling wagyu skewers to order, including rarer cuts."},price:"¥1,000–3,000",hours:{zh:"白天",en:"Daytime"}},
+     {k:"kEat",tags:[],name:{zh:"鱼福（烤海鲜）",en:"Uofuku (grilled seafood)"},jp:"魚福",img:"p-kuromon-seafood",q:"魚福 黒門市場",
+      what:{zh:"烤大扇贝、生蚝、海胆。点之前看清楚是一份还是 100g 的价格。",en:"Grilled scallops, oysters, sea urchin. Check if prices are per piece or per 100 g."},price:"¥800–3,000",hours:{zh:"白天",en:"Daytime"}},
+     {k:"kEat",tags:["classic","cheap"],name:{zh:"高桥食品（豆乳布丁）",en:"Takahashi Shokuhin (soy pudding)"},jp:"高橋食品",q:"高橋食品 黒門市場",
+      what:{zh:"1925 年开业的豆腐老店，豆乳布丁、豆腐甜甜圈当甜点。",en:"Tofu makers since 1925. Soy pudding or tofu doughnuts for dessert."},price:"¥200–500",hours:{zh:"8:00–15:30，周日休",en:"8:00–15:30, closed Sun"}}
+   ],
+   tips:{zh:["多数店家请你在店旁吃完再走。17:00 左右很多店开始收。"],en:["Most stalls ask you to eat at their counter. Many close around 17:00."]}
+ },
+ { id:"dotonbori", img:"c-dotonbori", group:"past", pos:2, slot:"eve", hrs:2, q:"戎橋 道頓堀", moods:["eat","shop","photo","night"],
+   visited:{zh:"第 3 天导游带过",en:"Visited on Day 3"},
+   dist:{zh:"走路 20 分钟",en:"20 min walk"}, name:{zh:"道顿堀 · 难波",en:"Dotonbori · Namba"},
+   blurb:{zh:"上次只是路过？这里是小红书上最常被推荐的几家，晚上回来慢慢吃、慢慢买。",en:"Only passed through? Here are the most-shared spots on social media for a proper evening visit."},
+   how:{zh:"走路约 20 分钟；或搭堺筋线 1 站到「日本桥站」再走 5 分钟。",en:"About 20 min on foot, or Sakaisuji Line 1 stop to Nippombashi then 5 min."}, mode:"walking",
+   places:[
+     {k:"kEat",tags:["xhs","queue"],name:{zh:"牛かつ もと村 难波店（炸牛排）",en:"Gyukatsu Motomura Namba"},jp:"牛かつ もと村 なんば店",img:"p-gyukatsu",q:"牛かつ もと村 なんば",
+      what:{zh:"外面炸得酥脆、里面还是粉红色的炸牛排，自己在小石板上烤到喜欢的熟度。",en:"Crumbed beef cutlet, rare inside. Finish each slice on your own hot stone."},price:"¥1,800–3,500",hours:{zh:"约 11:00–22:00",en:"~11:00–22:00"}},
+     {k:"kEat",tags:["xhs","cheap","queue"],name:{zh:"老爷爷芝士蛋糕 难波本店",en:"Rikuro Ojisan cheesecake"},jp:"りくろーおじさんの店 なんば本店",img:"p-rikuro",q:"りくろーおじさんの店 なんば本店",
+      what:{zh:"刚出炉会抖动的日式芝士蛋糕，出炉时店员会摇铃。一整个才一千日元左右。",en:"Wobbly Japanese cheesecake straight from the oven; staff ring a bell when a batch is out. About ¥1,000 a whole cake."},price:"¥1,000",hours:{zh:"约 9:00–20:00",en:"~9:00–20:00"}},
+     {k:"kEat",tags:["xhs"],name:{zh:"一兰拉面 道顿堀店",en:"Ichiran Ramen Dotonbori"},jp:"一蘭 道頓堀店",img:"p-ichiran",q:"一蘭 道頓堀店本館",
+      what:{zh:"一人一格的豚骨拉面，可以自己选浓淡、辣度、面的软硬。深夜也开。",en:"Tonkotsu ramen in private booths. Choose richness, spice and noodle firmness. Open late."},price:"¥1,200–2,000",hours:{zh:"24 小时",en:"24 hours"}},
+     {k:"kEat",tags:["classic"],name:{zh:"章鱼烧 わなか 千日前本店",en:"Takoyaki Wanaka (main store)"},jp:"たこ焼き わなか 千日前本店",img:"p-takoyaki",q:"わなか 千日前本店",
+      what:{zh:"大阪人心中的章鱼烧代表，外酥里软，有多种酱汁口味。",en:"A local benchmark for takoyaki: crisp outside, molten inside, with several sauces."},price:"¥600–1,000",hours:{zh:"约 10:00–21:00",en:"~10:00–21:00"}},
+     {k:"kEat",tags:["classic","queue"],name:{zh:"美津の（大阪烧）",en:"Mizuno (okonomiyaki)"},jp:"美津の",img:"p-okonomiyaki",q:"美津の 道頓堀 お好み焼き",
+      what:{zh:"米其林推荐的大阪烧老店，山药烧很有名。",en:"A Michelin-listed okonomiyaki institution, famous for its yam version."},price:"¥1,500–2,500",hours:{zh:"约 11:00–22:00",en:"~11:00–22:00"}},
+     {k:"kEat",tags:["classic","cheap"],name:{zh:"551 蓬莱 本店（肉包）",en:"551 Horai (pork buns)"},jp:"551蓬莱 本店",img:"p-551",q:"551蓬莱 本店 難波",
+      what:{zh:"大阪人最爱的肉包，现蒸很多汁，可以外带。",en:"Osaka's favourite steamed pork buns. Great to take away."},price:"¥300–1,000",hours:{zh:"约 10:00–21:30",en:"~10:00–21:30"}},
+     {k:"kEat",tags:["classic"],name:{zh:"蟹道乐 道顿堀本店",en:"Kani Doraku (main store)"},jp:"かに道楽 道頓堀本店",img:"p-kanidoraku",q:"かに道楽 道頓堀本店",
+      what:{zh:"会动的大螃蟹招牌就是这家。套餐建议先订位；门口也有外卖烤蟹脚。",en:"Home of the moving crab sign. Book for a set meal, or grab grilled crab legs from the front stall."},price:"¥4,000–10,000",hours:{zh:"午餐到晚上",en:"Lunch to late"}},
+     {k:"kShop",tags:[],name:{zh:"唐吉诃德 道顿堀店",en:"Don Quijote Dotonbori"},jp:"ドン・キホーテ道頓堀店",q:"ドン・キホーテ道頓堀店",
+      what:{zh:"有摩天轮的那栋。药妆、零食、伴手礼集中在一家买，只排一次免税队。",en:"The one with the Ferris wheel. Buy everything in one go and queue for tax-free once."},price:{zh:"看清单",en:"Your list"},hours:{zh:"营业到深夜",en:"Open very late"}}
+   ],
+   tips:{zh:["晚上人非常多，包包背在前面。","药妆推荐：眼药水、面膜、防晒、休足时间脚贴。"],en:["Very crowded at night. Keep your bag in front.","Popular buys: eye drops, sheet masks, sunscreen, Kyusoku Jikan foot patches."]}
+ },
+ { id:"shinsaibashi", img:"c-shinsaibashi", group:"past", pos:3, slot:"any", hrs:2.5, q:"心斎橋筋商店街", moods:["shop","eat","rain"],
+   visited:{zh:"第 3 天导游带过",en:"Visited on Day 3"},
+   dist:{zh:"地铁 2 站",en:"2 metro stops"}, name:{zh:"心斋桥 · 中古名牌与蛋包饭",en:"Shinsaibashi · Pre-loved Luxury"},
+   blurb:{zh:"上次没时间比价？中古名牌几家大店走路 5 分钟内，商店街有屋顶，下雨也能逛。",en:"No time to compare last time? The big resale stores are within 5 min of each other, under a covered arcade."},
+   how:{zh:"惠美须町站搭堺筋线 2 站到「长堀桥站」，往西走约 7 分钟。",en:"Sakaisuji Line 2 stops to Nagahoribashi, then walk west about 7 min."}, mode:"transit",
+   places:[
+     {k:"kEat",tags:["classic","xhs"],name:{zh:"北极星 心斋桥本店（蛋包饭）",en:"Hokkyokusei (omurice)"},jp:"北極星 心斎橋本店",img:"p-omurice",q:"北極星 心斎橋本店",
+      what:{zh:"号称蛋包饭的发源店，老式日本木屋，坐在榻榻米上吃。",en:"Said to be the birthplace of omurice, served in an old wooden house with tatami seating."},price:"¥1,000–1,800",hours:{zh:"约 11:30–21:30",en:"~11:30–21:30"}},
+     {k:"kShop",tags:[],name:{zh:"KOMEHYO 心斋桥店",en:"KOMEHYO Shinsaibashi"},jp:"コメ兵 心斎橋店",q:"KOMEHYO 心斎橋",
+      what:{zh:"日本最大的中古连锁，货最齐，先来这里看行情。",en:"Japan's biggest resale chain. Start here to learn prices."},price:{zh:"随心",en:"Up to you"},hours:"11:00–20:00"},
+     {k:"kShop",tags:[],name:{zh:"VINTAGE QOO 心斋桥",en:"VINTAGE QOO Shinsaibashi"},jp:"VINTAGE QOO TOKYO 心斎橋",q:"VINTAGE QOO TOKYO 心斎橋",
+      what:{zh:"古董 Chanel、Hermès 为主，店内很美，只看也值得。",en:"Vintage Chanel and Hermès in a beautiful shop."},price:{zh:"随心",en:"Up to you"},hours:"11:30–20:00"},
+     {k:"kShop",tags:[],name:{zh:"大丸 心斋桥店",en:"Daimaru Shinsaibashi"},jp:"大丸心斎橋店",q:"大丸心斎橋店",
+      what:{zh:"百货公司，专柜彩妆、名牌都有，有统一免税柜台。",en:"Department store with cosmetics and luxury brands, plus a tax-free counter."},price:{zh:"随心",en:"Up to you"},hours:{zh:"约 10:00–20:00",en:"~10:00–20:00"}}
+   ],
+   tips:{zh:["中古成色：N/S 接近全新，A 轻微使用感，AB/B 看得出痕迹。先问清楚再买。"],en:["Grades: N/S near new, A light wear, AB/B visible wear. Ask before buying."]}
+ }
+];
+
+const PRESETS = [
+  {name:{zh:"高空与逛街",en:"Sky views & shopping"},ids:["tennoji","umeda","skybldg"]},
+  {name:{zh:"复古大阪",en:"Retro Osaka"},ids:["sumiyoshi","shinsekai","denden"]},
+  {name:{zh:"买买买",en:"Shop till you drop"},ids:["kuromon","shinsaibashi","dotonbori"]},
+  {name:{zh:"下雨天",en:"Rainy day"},ids:["kaiyukan","umeda"]}
+];
+
+const TRIPS = [
+ { id:"usj", img:"c-usj", name:{zh:"日本环球影城 USJ",en:"Universal Studios Japan"},
+   lead:{zh:"想去的话，一整天留给它。10 月刚好是万圣节季，白天玩设施，晚上有恐怖之夜。",en:"Give it a full day. October is Halloween season: rides by day, Horror Nights after dark."},
+   best:{zh:"推荐 10/9 周五去，人比周六少。",en:"Go on Fri 9 Oct if you can; it's quieter than Saturday."},
+   how:{zh:"酒店走约 10 分钟到 JR「新今宫站」→ 环状线到「西九条站」→ 换 JR 梦咲线到「环球城站（Universal City）」。全程约 30 分钟，交通卡可以用。",en:"Walk about 10 min to JR Shin-Imamiya → Loop Line to Nishikujo → JR Yumesaki Line to Universal City. About 30 min; IC cards work."},
+   destQ:"Universal Studios Japan",
+   stepsTitle:{zh:"门票怎么买",en:"How to buy tickets"},
+   steps:[
+     {t:{zh:"先决定日期",en:"Pick your date"},d:{zh:"USJ 的票是指定日期的，价格也按日期浮动，周末比较贵。",en:"Tickets are date-specific with prices that change by day; weekends cost more."}},
+     {t:{zh:"买「1 Day Studio Pass」",en:"Buy a 1 Day Studio Pass"},d:{zh:"在 USJ 官网，或 Klook、KKday 等授权平台买电子票，手机出示 QR 码就能进场。10 月的万圣节恐怖之夜已经包含在门票里。",en:"Buy e-tickets on the official site or authorised sellers like Klook or KKday, then scan the QR code at the gate. Halloween Horror Nights is included in October."}},
+     {t:{zh:"要不要买快速通关（Express Pass）？",en:"Add an Express Pass?"},d:{zh:"每天限量，周末很快卖完。想少排队、一定要玩任天堂世界的话，早点买含「超级任天堂世界」入场保证的版本。",en:"Limited per day and sells out fast on weekends. If you want shorter queues and guaranteed Super Nintendo World entry, buy a version that includes it early."}},
+     {t:{zh:"下载 USJ 官方 App",en:"Download the official USJ app"},d:{zh:"没买快速通关的话，入园后马上用 App 领「超级任天堂世界」入场整理券，先到先得。App 也能看每个设施的排队时间。",en:"Without Express, claim a Super Nintendo World timed-entry ticket in the app as soon as you enter; it's first come, first served. The app also shows live wait times."}},
+     {t:{zh:"开园前 30–60 分钟到",en:"Arrive 30–60 min before opening"},d:{zh:"开园时间每天不同，出发前在官网确认。",en:"Opening hours vary by day, so check the official site before you go."}}
+   ],
+   mustTitle:{zh:"必玩",en:"Don't miss"},
+   must:{zh:["超级任天堂世界：马里奥赛车、耀西冒险、大金刚区","哈利波特魔法世界：霍格莫德村 + 奶油啤酒","小黄人乐园","飞天翼龙、好莱坞美梦过山车（胆大必玩）"],en:["Super Nintendo World: Mario Kart, Yoshi's Adventure, Donkey Kong Country","The Wizarding World of Harry Potter: Hogsmeade and Butterbeer","Minion Park","The Flying Dinosaur and Hollywood Dream coasters (for thrill-seekers)"]},
+   tips:{zh:["万圣节恐怖之夜：9/11–11/8。天黑后部分街区会有僵尸出没，胆小或带小孩的请避开。部分鬼屋需另外购票。","园内人多，手机记得带充电宝。"],en:["Halloween Horror Nights runs 11 Sep–8 Nov. After dark, zombies roam some streets; avoid them if you scare easily. Some haunted attractions cost extra.","It's crowded and you'll use your phone a lot. Bring a power bank."]},
+   link:{url:"https://www.usj.co.jp/web/en/us",label:{zh:"USJ 官网",en:"Official USJ site"}}
+ },
+ { id:"nara", img:"c-nara", name:{zh:"奈良 · 和小鹿见面",en:"Nara · Meet the Deer"},
+   lead:{zh:"团体行程没去过的古都。大约半天到一天，喂鹿、看大佛、吃现打麻糬。",en:"An ancient capital the tour didn't cover. Half to a full day of deer, a giant Buddha and fresh mochi."},
+   best:{zh:"早上出发，下午回来还能逛一下难波。",en:"Leave in the morning and you'll be back in Namba by late afternoon."},
+   how:{zh:"搭堺筋线 1 站到「日本桥站」，换近铁奈良线到「近铁奈良站」，快速急行约 40 分钟。出站走约 5 分钟就是奈良公园。",en:"Sakaisuji Line 1 stop to Nippombashi, change to the Kintetsu Nara Line to Kintetsu-Nara, about 40 min by Rapid Express. Nara Park is a 5 min walk."},
+   destQ:"近鉄奈良駅",
+   stepsTitle:{zh:"建议顺序",en:"Suggested order"},
+   steps:[
+     {img:"p-mochi",t:{zh:"中谷堂 · 高速捣麻糬",en:"Nakatanidou · high-speed mochi"},d:{zh:"车站附近，门口有超快的捣麻糬表演。现做黄豆粉艾草麻糬约 ¥200。",en:"Near the station, with a lightning-fast mochi-pounding show out front. Fresh kinako mochi about ¥200."}},
+     {t:{zh:"奈良公园 · 喂小鹿",en:"Nara Park · feed the deer"},d:{zh:"鹿仙贝一包约 ¥200。对鹿鞠躬，它会点头回礼。",en:"Deer crackers about ¥200 a pack. Bow to a deer and it may bow back."}},
+     {img:"p-todaiji",t:{zh:"东大寺 · 大佛殿",en:"Todai-ji · Great Buddha Hall"},d:{zh:"世界最大级的木造建筑之一，里面是 15 米高的大佛。需门票。",en:"One of the world's largest wooden buildings, housing a 15 m Buddha. Entry fee applies."}},
+     {t:{zh:"春日大社（有体力再去）",en:"Kasuga Taisha (if you have energy)"},d:{zh:"林间小路两旁满满的石灯笼，很好拍。",en:"Forest paths lined with stone lanterns. Very photogenic."}}
+   ],
+   mustTitle:{zh:"必吃必买",en:"Eat & buy"},
+   must:{zh:["中谷堂现打麻糬","柿叶寿司（奈良名物，可以当伴手礼）","小鹿造型的御守、零食"],en:["Fresh mochi at Nakatanidou","Kakinoha-zushi, persimmon-leaf sushi (a Nara speciality)","Deer-themed charms and snacks"]},
+   tips:{zh:["小鹿看到仙贝会追着要，拿出来就要喂完。喂完摊开双手给它看，它就会走开。","小鹿会顶人、咬衣角，包包和地图收好。"],en:["Deer will chase you once they see crackers. Feed them all, then show empty hands and they'll leave.","Deer can headbutt and nibble clothes. Keep bags and paper maps tucked away."]},
+   link:null
+ }
+];
+
+const PHRASES = [
+  {jp:"免税できますか？",ro:"Menzei dekimasu ka?",zh:"可以免税吗？",en:"Can I get tax-free?"},
+  {jp:"カードで払えますか？",ro:"Kādo de haraemasu ka?",zh:"可以刷卡吗？",en:"Can I pay by card?"},
+  {jp:"これをください。",ro:"Kore o kudasai.",zh:"我要这个。",en:"This one, please."},
+  {jp:"トイレはどこですか？",ro:"Toire wa doko desu ka?",zh:"厕所在哪里？",en:"Where is the toilet?"},
+  {jp:"写真を撮ってもらえますか？",ro:"Shashin o totte moraemasu ka?",zh:"可以帮我拍照吗？",en:"Could you take our photo?"}
+];
+
+/* 照片：Wikimedia Commons 免费授权。x = 是不是那个地方 / 那家店本身（false 会显示「示意图」） */
+const PHOTOS = {"c-shinsekai": {"x": true, "a": "Sakai Yayoi", "l": "CC0", "u": "https://commons.wikimedia.org/wiki/File:Shinsekai_and_Tsutenkaku_Tower.jpg"}, "c-tennoji": {"x": true, "a": "Dick Thomas Johnson from Tokyo, Japan", "l": "CC BY 2.0", "u": "https://commons.wikimedia.org/wiki/File:Abeno_Harukas_observation_deck_2019-04-12.jpg"}, "c-denden": {"x": true, "a": "Clemens Vasters", "l": "CC BY 2.0", "u": "https://commons.wikimedia.org/wiki/File:Den-Den_Town,_Nipponbashi,_Osaka_-_Jul_12,_2023.jpg"}, "c-sumiyoshi": {"x": true, "a": "Saigen Jiro", "l": "CC0", "u": "https://commons.wikimedia.org/wiki/File:Sumiyoshi-taisha,_Sorihashi.jpg"}, "c-kaiyukan": {"x": true, "a": "Maarten Heerlien from Voorschoten, The Netherlands", "l": "CC BY 2.0", "u": "https://commons.wikimedia.org/wiki/File:Star_attraction_of_Osaka_Aquarium_Kaiyukan_(6453172935).jpg"}, "c-tenjinbashi": {"x": true, "a": "DVMG", "l": "CC BY 3.0", "u": "https://commons.wikimedia.org/wiki/File:Tenjinbashisuji_shopping_street_-_panoramio.jpg"}, "c-umeda": {"x": true, "a": "Wikimedia Commons", "l": "CC BY-SA 3.0", "u": "https://commons.wikimedia.org/wiki/File:Osaka_Station_City.JPG"}, "c-skybldg": {"x": true, "a": "Kakidai", "l": "CC BY-SA 4.0", "u": "https://commons.wikimedia.org/wiki/File:2018_Umeda_Sky_Building.jpg"}, "c-kuromon": {"x": true, "a": "Mc681", "l": "CC BY-SA 4.0", "u": "https://commons.wikimedia.org/wiki/File:Kuromon-ichiba_in_201408.JPG"}, "c-dotonbori": {"x": true, "a": "Martin Falbisoner", "l": "CC BY-SA 4.0", "u": "https://commons.wikimedia.org/wiki/File:Dotonbori,_Osaka,_at_night,_November_2016.jpg"}, "c-shinsaibashi": {"x": true, "a": "Mc681", "l": "CC BY-SA 4.0", "u": "https://commons.wikimedia.org/wiki/File:Shinsaibashi-suji_201408.JPG"}, "c-usj": {"x": true, "a": "Rebirth10", "l": "CC0", "u": "https://commons.wikimedia.org/wiki/File:Universal_Studios_Japan_2019,08.jpg"}, "c-nara": {"x": true, "a": "Martin Falbisoner", "l": "CC BY-SA 4.0", "u": "https://commons.wikimedia.org/wiki/File:Sika_deer_in_Nara_Park,_November_2016.jpg"}, "p-daruma": {"x": true, "a": "Aiko99ann", "l": "CC BY-SA 3.0", "u": "https://commons.wikimedia.org/wiki/File:KushikatsuDaruma01.jpg"}, "p-kushikatsu": {"x": false, "a": "Ajay Suresh from New York, NY, USA", "l": "CC BY 2.0", "u": "https://commons.wikimedia.org/wiki/File:Kushikatsu_-_Shinsekai_(28289215848).jpg"}, "p-tsutenkaku": {"x": true, "a": "Dick Thomas Johnson from Tokyo, Japan", "l": "CC BY 2.0", "u": "https://commons.wikimedia.org/wiki/File:Shinsekai_and_Tsutenkaku_at_night_2019-04-12.jpg"}, "p-manta": {"x": true, "a": "SR EXR", "l": "CC0", "u": "https://commons.wikimedia.org/wiki/File:Kaiyukan_Manta_and_Whale_shark.JPG"}, "p-croquette": {"x": false, "a": "Pieria(Uploader and Photographer)", "l": "Public domain", "u": "https://commons.wikimedia.org/wiki/File:Korokke.jpg"}, "p-tenjin-arcade": {"x": true, "a": "DVMG", "l": "CC BY 3.0", "u": "https://commons.wikimedia.org/wiki/File:Tenjinbashisuji_shopping_street_-_panoramio_(24).jpg"}, "p-harbs": {"x": false, "a": "bryan... from Taipei, Taiwan", "l": "CC BY-SA 2.0", "u": "https://commons.wikimedia.org/wiki/File:HARBS,_Nagoya,_Aichi,_Japan,_%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%89%E3%83%9E%E3%83%AD%E3%83%B3%E3%82%B1%E3%83%BC%E3%82%AD,_%E3%83%9E%E3%83%AD%E3%83%B3%E3%82%BF%E3%83%AB%E3%83%88,_%E3%83%9F%E3%83%AB%E3%82%AF%E3%83%AC%E3%83%BC%E3%83%97,_%E3%83%8F%E3%83%BC%E3%83%96%E3%82%B9,_%E6%A0%84%E6%9C%AC%E5%BA%97_(15869571285).jpg"}, "p-escalator": {"x": true, "a": "Jakub Hałun", "l": "CC BY-SA 4.0", "u": "https://commons.wikimedia.org/wiki/File:20100715_Osaka_Umeda_Sky_Building_escalator_1855.jpg"}, "p-okonomiyaki": {"x": false, "a": "ume-y", "l": "CC BY 2.0", "u": "https://commons.wikimedia.org/wiki/File:Okonomiyaki_001.jpg"}, "p-kuromon-seafood": {"x": false, "a": "Choi2451", "l": "CC BY-SA 3.0", "u": "https://commons.wikimedia.org/wiki/File:Seafood_in_Kuromon_Market,_Osaka_on_June_7th,_2017.jpg"}, "p-gyukatsu": {"x": false, "a": "bryan... from Taipei, Taiwan", "l": "CC BY-SA 2.0", "u": "https://commons.wikimedia.org/wiki/File:%E7%82%B8%E7%89%9B%E6%8E%92,_%E4%BA%AC%E9%83%BD%E5%8B%9D%E7%89%9B,_%E5%8B%9D%E7%89%9B,_%E4%BA%AC%E9%83%BD,_%E6%97%A5%E6%9C%AC,_%E4%BA%AC%E9%83%BD%E5%8B%9D%E7%89%9B%E4%BA%AC%E9%83%BD%E9%A7%85%E5%89%8D,_%E7%89%9B%E3%82%AB%E3%83%84%E5%B0%82%E9%96%80%E5%BA%97,_%E3%81%8D%E3%82%87%E3%81%86%E3%81%A8,_%E3%81%BF%E3%82%84%E3%81%93,_%E3%81%8D%E3%82%87%E3%81%86%E3%81%AE%E3%81%BF%E3%82%84%E3%81%93,_%E3%81%AB%E3%81%A3%E3%81%BD%E3%82%93,_%E3%81%AB%E3%81%BB%E3%82%93,_Kyoto_Katsugyu,_Kyoto,_Japan,_Nippon,_Nihon_(24897293890).jpg"}, "p-rikuro": {"x": true, "a": "ノボホショコロトソ", "l": "CC BY-SA 4.0", "u": "https://commons.wikimedia.org/wiki/File:%E3%82%8A%E3%81%8F%E3%82%8D%E3%83%BC%E3%81%8A%E3%81%98%E3%81%95%E3%82%93%E3%81%AE%E3%83%81%E3%83%BC%E3%82%BA%E3%82%B1%E3%83%BC%E3%82%AD(%E3%82%AB%E3%83%83%E3%83%88)1.jpg"}, "p-ichiran": {"x": true, "a": "Nissy-KITAQ", "l": "CC BY-SA 3.0", "u": "https://commons.wikimedia.org/wiki/File:Ichiran_Ramen_normal_type.jpg"}, "p-takoyaki": {"x": false, "a": "Fumikas Sagisavas", "l": "CC0", "u": "https://commons.wikimedia.org/wiki/File:Takoyaki_balls_(1).jpg"}, "p-551": {"x": true, "a": "アイス", "l": "CC BY-SA 4.0", "u": "https://commons.wikimedia.org/wiki/File:Hourai_butaman.jpg"}, "p-kanidoraku": {"x": true, "a": "Tokumeigakarinoaoshima", "l": "CC BY-SA 4.0", "u": "https://commons.wikimedia.org/wiki/File:Kani_Doraku_Dotombori_honten_on_21st_October_2020.jpg"}, "p-omurice": {"x": false, "a": "高砂の浦", "l": "CC0", "u": "https://commons.wikimedia.org/wiki/File:Omurice_with_Demi-glace_Sause_in_Osaka,_Japan.jpg"}, "p-mochi": {"x": true, "a": "Wikimedia Commons", "l": "CC BY-SA 2.0", "u": "https://commons.wikimedia.org/wiki/File:Sanjodori_Nakatanido.jpg"}, "p-todaiji": {"x": true, "a": "そらみみ", "l": "CC BY-SA 4.0", "u": "https://commons.wikimedia.org/wiki/File:Daibutsuden_Hall_of_Todaiji_Temple_20140201.JPG"}};
+
+/* ============================================================ */
+
+const ICON = {
+  map:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>',
+  taxi:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14v-5l-2-5H7l-2 5z"/><path d="M5 12h14M10 4h4"/><circle cx="8" cy="17" r="1.5"/><circle cx="16" cy="17" r="1.5"/></svg>',
+  home:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>',
+  heart:'<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.3C1 8 3.4 4.5 7 4.5c2 0 3.5 1.1 5 3 1.5-1.9 3-3 5-3 3.6 0 6 3.5 4.5 7.2C19.5 16.4 12 21 12 21z"/></svg>'
+};
+const MAX = 5;
+let lang = "zh", tab = "explore", mood = "all", openArea = null, planDay = "d9";
+const store = {
+  get(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}},
+  set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+};
+let saved = store.get("osaka-saved") || {};
+let plans = store.get("osaka-plans") || {d9:[],d10:[],full:{d9:null,d10:null}};
+const L = o => (o && typeof o === "object" && !Array.isArray(o)) ? (o[lang] ?? o.zh) : o;
+const esc = s => String(s ?? "").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const dirUrl = (dest, mode, origin) => "https://www.google.com/maps/dir/?api=1" + (origin ? "&origin=" + encodeURIComponent(origin) : "") + "&destination=" + encodeURIComponent(dest) + "&travelmode=" + (mode || "walking");
+const pid = (a,i) => a.id + "-" + i;
+const byId = id => AREAS.find(a => a.id === id);
+const short = a => L(a.name).split(" · ")[0];
+const savedCount = () => Object.values(saved).filter(Boolean).length;
+const hhmm = h => { const m = Math.round(h*60/15)*15; return String(Math.floor(m/60)).padStart(2,"0") + ":" + String(m%60).padStart(2,"0"); };
+const photo = (id, cls) => { if (!id) return ""; const p = PHOTOS[id] || {};
+  return `<span class="ph ${cls||""}"><img src="img/${id}.jpg" alt="" loading="lazy" decoding="async">${p.x===false?`<span class="demo">${lang==="zh"?"示意图":"Similar dish"}</span>`:""}</span>`; };
+const persist = () => store.set("osaka-plans", plans);
+
+function renderStatic(){
+  document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+  document.body.classList.toggle("lang-en", lang === "en");
+  document.querySelectorAll("[data-t]").forEach(el => el.textContent = L(UI[el.dataset.t]));
+  document.getElementById("lang-zh").setAttribute("aria-pressed", lang === "zh");
+  document.getElementById("lang-en").setAttribute("aria-pressed", lang === "en");
+  document.getElementById("base").innerHTML = `<small>${esc(L(UI.baseLabel))}</small><h2>${esc(HOTEL.name)}</h2><p>${esc(L(UI.baseNote))}</p>
+    <div class="actions"><a class="btn primary" href="${dirUrl(HOTEL.maps,"walking")}" target="_blank" rel="noopener">${ICON.map}${esc(L(UI.walkHome))}</a>
+    <button class="btn" type="button" data-hotel>${ICON.taxi}${esc(L(UI.taxiHome))}</button></div>`;
+  const n = savedCount(), pn = plans.d9.length + plans.d10.length + (plans.full.d9?1:0) + (plans.full.d10?1:0);
+  const tabs = [["explore",UI.explore],["plan",UI.plan,pn],["trips",UI.trips],["saved",UI.saved,n],["info",UI.info]];
+  document.getElementById("tabs").innerHTML = tabs.map(([id,t,c]) =>
+    `<button class="tab" role="tab" aria-selected="${tab===id}" data-tab="${id}">${esc(L(t))}${c?`<span class="cnt">${c}</span>`:""}</button>`).join("");
+  document.getElementById("fab").innerHTML = ICON.home + esc(L(UI.fab));
+}
+
+function areaCard(a){
+  const kinds = [...new Set(a.places.map(p=>p.k))];
+  const hot = a.places.some(p => p.tags.includes("xhs"));
+  return `<button class="area" type="button" data-area="${a.id}" aria-haspopup="dialog">
+    ${photo(a.img)}
+    <div class="area-top"><span class="dist ${a.group==="ride"?"ride":a.group==="past"?"past":""}">${esc(a.visited?L(a.visited):L(a.dist))}</span><span class="count">${a.places.length} ${esc(L(UI.places))}</span></div>
+    <h3>${esc(L(a.name))}</h3><p>${esc(L(a.blurb))}</p>
+    <div class="tags">${hot?`<span class="tag xhs">${esc(L(UI.xhs))}</span>`:""}${kinds.map(k=>`<span class="tag">${esc(L(UI[k]))}</span>`).join("")}</div>
+  </button>`;
+}
+
+function renderExplore(){
+  const moods = ["all","eat","shop","photo","night","rain"];
+  const list = AREAS.filter(a => mood === "all" || a.moods.includes(mood));
+  const sec = (g,t,s) => { const l = list.filter(a=>a.group===g); return l.length ? `<div class="group-h"><h2>${esc(L(t))}</h2><span>${esc(L(s))}</span></div><div class="areas">${l.map(areaCard).join("")}</div>` : ""; };
+  return `<div class="moods" role="group" aria-label="Filter">${moods.map(m=>`<button class="pill" type="button" data-mood="${m}" aria-pressed="${mood===m}">${esc(L(UI[m]))}</button>`).join("")}</div>
+    ${sec("walk",UI.gWalk,UI.gWalkSub)}${sec("ride",UI.gRide,UI.gRideSub)}${sec("past",UI.gPast,UI.gPastSub)}`;
+}
+
+function placeCard(a, p, i, showArea){
+  const id = pid(a,i);
+  return `<div class="place">
+    ${photo(p.img,"sm")}
+    <div class="place-top"><div>
+      <span class="kind">${esc(L(UI[p.k]))}${showArea?` · ${esc(short(a))}`:""}</span>
+      <h5>${esc(L(p.name))}</h5><div class="jpn">${esc(p.jp)}</div></div>
+      <button class="heart" type="button" data-save="${id}" aria-pressed="${!!saved[id]}" aria-label="${esc(L(UI.save))}">${ICON.heart}</button></div>
+    ${p.tags.length?`<div class="tags">${p.tags.map(t=>`<span class="tag ${t}">${esc(L(UI[t]))}</span>`).join("")}</div>`:""}
+    <p>${esc(L(p.what))}</p>
+    <div class="facts"><span>${esc(L(UI.price))} <b>${esc(L(p.price))}</b></span><span>${esc(L(UI.hours))} <b>${esc(L(p.hours))}</b></span></div>
+    <div class="actions"><a class="btn primary" href="${dirUrl(p.q, a.mode)}" target="_blank" rel="noopener">${ICON.map}${esc(L(UI.takeMe))}</a>
+      <button class="btn" type="button" data-jp="${esc(p.jp)}までお願いします。" data-q="${esc(p.q)}">${ICON.taxi}${esc(L(UI.taxi))}</button></div>
+  </div>`;
+}
+
+/* ---------- Route planner ---------- */
+function orderPlan(ids){
+  const sel = ids.map(byId).filter(Boolean);
+  const rest = sel.filter(a => a.slot !== "eve").sort((x,y) => x.pos - y.pos);
+  const eve = sel.filter(a => a.slot === "eve").sort((x,y) => y.pos - x.pos);
+  let t = 9.5, prev = null; const out = [];
+  [...rest, ...eve].forEach(a => {
+    if (prev) t += Math.abs(a.pos - prev.pos) >= 3 ? 0.75 : 0.5; else t += Math.abs(a.pos) >= 3 ? 0.5 : 0.25;
+    let wait = false;
+    if (a.id === "skybldg" && t < 17) { t = 17; wait = true; }
+    if (a.id === "dotonbori" && t < 18) { t = 18; wait = true; }
+    out.push({a, start:t, wait, prev});
+    t += a.hrs; prev = a;
+  });
+  const warns = [];
+  out.forEach(s => {
+    if (s.a.id === "sumiyoshi" && s.start > 15.5) warns.push({zh:"住吉大社 17:00 关门，这样排可能来不及。",en:"Sumiyoshi Taisha closes at 17:00; this may be too late."});
+    if (s.a.id === "kuromon" && s.start > 14.5) warns.push({zh:"黑门市场下午很多摊位开始收，建议早点去。",en:"Many Kuromon stalls close in the afternoon. Go earlier if you can."});
+  });
+  if (t > 22) warns.push({zh:"这天有点满，可以删掉一两个，或者分到另一天。",en:"This day is packed. Drop one or two, or move some to the other day."});
+  return {steps:out, end:t, warns};
+}
+
+function renderPlan(){
+  const zh = lang === "zh";
+  const ids = plans[planDay], full = plans.full[planDay];
+  const other = planDay === "d9" ? "d10" : "d9";
+  let body = "";
+  if (full){
+    const tr = TRIPS.find(x => x.id === full);
+    body = `<div class="fullday"><h3>${esc(zh?"这天留给「"+L(tr.name)+"」":"This day is for "+L(tr.name))}</h3><p>${esc(L(tr.lead))}</p>
+      <div class="actions"><button class="btn" type="button" data-tab="trips">${zh?"看完整攻略":"Open the full guide"}</button>
+      <a class="btn" href="${dirUrl(tr.destQ,"transit")}" target="_blank" rel="noopener">${ICON.map}${esc(L(UI.takeMe))}</a></div></div>`;
+  } else {
+    const r = orderPlan(ids);
+    const pick = AREAS.map(a => `<button class="pk" type="button" data-pick="${a.id}" aria-pressed="${ids.includes(a.id)}"><b>${esc(short(a))}</b><small>${esc(a.visited?L(a.visited):L(a.dist))}</small></button>`).join("");
+    const result = ids.length ? `<div class="plan">
+      <div class="plan-h"><h3>${esc(L(UI[planDay]))} · ${zh?"推荐顺序":"Best order"}</h3><button class="clear" type="button" data-clear>${zh?"清空":"Clear"}</button></div>
+      ${r.warns.map(w=>`<div class="warn">${esc(L(w))}</div>`).join("")}
+      <ol class="steps">
+        ${r.steps.map(s => `<li><div><span class="t">${hhmm(s.start)}</span><b>${esc(L(s.a.name))}</b>
+          <span class="d">${zh?"停留约":"Stay ~"} ${s.a.hrs} ${zh?"小时":"hrs"}${s.wait?(zh?" · 为了看日落 / 夜景，中间的空档可以回酒店休息":" · timed for sunset/night; rest at the hotel in between"):""}</span>
+          <span class="links"><a class="link" href="${dirUrl(s.a.q, (s.prev && Math.abs(s.a.pos-s.prev.pos)<=1.2) || (!s.prev && s.a.group==="walk") ? "walking" : "transit", s.prev ? s.prev.q : null)}" target="_blank" rel="noopener">${ICON.map} ${s.prev?(zh?"从上一站去这里":"From previous stop"):(zh?"从这里出发":"Start here")}</a>
+          <button class="link" type="button" data-area="${s.a.id}">${zh?"看推荐店家":"See picks"}</button></span></div></li>`).join("")}
+        <li class="home"><div><span class="t">~${hhmm(r.end + 0.5)}</span><b>${zh?"回酒店":"Back to the hotel"}</b>
+          <span class="links"><a class="link" href="${dirUrl(HOTEL.maps,"transit")}" target="_blank" rel="noopener">${ICON.map} ${zh?"导航回酒店":"Directions"}</a><button class="link" type="button" data-hotel>${zh?"出租车卡":"Taxi card"}</button></span></div></li>
+      </ol>
+      <a class="btn primary" href="${"https://www.google.com/maps/dir/" + [HOTEL.maps, ...r.steps.map(s=>s.a.q), HOTEL.maps].map(encodeURIComponent).join("/")}" target="_blank" rel="noopener">${ICON.map}${zh?"在 Google Maps 看整条路线":"See the whole route in Google Maps"}</a>
+      <p class="note">${zh?"整条路线用来看方向就好；Google Maps 多站路线常常默认显示开车。真正出发时，用每一站的「从上一站去这里」看搭车方法。":"Use the whole-route map for an overview; multi-stop routes often default to driving. For trains, use each stop's \"From previous stop\" link."}</p>
+    </div>` : `<p class="empty">${zh?"在上面选几个想去的地方，或点一个现成组合。":"Pick a few places above, or tap a ready-made combo."}</p>`;
+    body = `<p class="label">${zh?"现成组合":"Ready-made combos"}</p>
+      <div class="row">${PRESETS.map((p,i)=>`<button class="pill" type="button" data-preset="${i}">${esc(L(p.name))}</button>`).join("")}</div>
+      <p class="label">${zh?`自己选（最多 ${MAX} 个）· 已选 ${ids.length}`:`Choose your own (up to ${MAX}) · ${ids.length} picked`}</p>
+      <div class="pick">${pick}</div>${result}`;
+  }
+  return `<section class="panel">
+    <h2>${zh?"选几个地方，帮你排好顺序":"Pick a few places, we'll sort the order"}</h2>
+    <p>${zh?"按南北方向排、不走回头路，也会照顾营业时间：神社排早上，夜景排傍晚。两天可以各配一条。":"Ordered north–south with no backtracking, and timed sensibly: shrines in the morning, views in the evening. Plan each day separately."}</p>
+    <div class="seg" role="group">${["d9","d10"].map(d=>`<button type="button" data-day="${d}" aria-pressed="${planDay===d}">${esc(L(UI[d]))}<small>${plans.full[d]?esc(L(TRIPS.find(x=>x.id===plans.full[d]).name)):(plans[d].length?(zh?`${plans[d].length} 个地方`:`${plans[d].length} places`):(zh?"还没安排":"Not planned"))}</small></button>`).join("")}</div>
+    <p class="label">${zh?"这天要去一整天的地方吗？":"A full-day trip this day?"}</p>
+    <div class="row">
+      <button class="pill" type="button" data-full="" aria-pressed="${!full}">${zh?"不用，我自己配":"No, I'll mix"}</button>
+      ${TRIPS.map(tr=>`<button class="pill" type="button" data-full="${tr.id}" aria-pressed="${full===tr.id}" ${plans.full[other]===tr.id?"disabled":""}>${esc(L(tr.name))}</button>`).join("")}
+    </div>
+    ${body}
+  </section>`;
+}
+
+function renderTrips(){
+  const zh = lang === "zh";
+  return `<section class="panel"><h2>${zh?"想跑远一点？一整天的行程":"Going further? Full-day trips"}</h2>
+    <p>${zh?"选了之后，在「配路线」把那天设成一日游就好。两个都是团体行程没去过的。":"Choose one, then set that day as a day trip in Plan. Neither is on the group tour."}</p>
+    ${TRIPS.map(tr=>`<article class="trip" id="trip-${tr.id}">
+      ${photo(tr.img)}<div class="trip-h"><h3>${esc(L(tr.name))}</h3><p>${esc(L(tr.lead))}</p></div>
+      <div class="box" style="margin:0"><b>${esc(L(tr.best))}</b></div>
+      <div class="sec" style="margin:0"><h4>${esc(L(UI.fromHotel))}</h4><div class="box" style="margin:0"><p>${esc(L(tr.how))}</p>
+        <div class="actions" style="margin-top:8px"><a class="btn primary full" href="${dirUrl(tr.destQ,"transit")}" target="_blank" rel="noopener">${ICON.map}${esc(L(UI.takeMe))}</a></div></div></div>
+      <div class="sec" style="margin:0"><h4>${esc(L(tr.stepsTitle))}</h4><ol class="ol">${tr.steps.map(s=>`<li><div><b>${esc(L(s.t))}</b><span>${esc(L(s.d))}</span>${photo(s.img,"sm")}</div></li>`).join("")}</ol></div>
+      <div class="sec" style="margin:0"><h4>${esc(L(tr.mustTitle))}</h4><div class="must">${L(tr.must).map(m=>`<div>${esc(m)}</div>`).join("")}</div></div>
+      <div class="tip">${L(tr.tips).map(t=>`<p>${esc(t)}</p>`).join("")}</div>
+      <div class="actions">
+        <button class="btn" type="button" data-setfull="${tr.id}" data-d="d9">${zh?"排在 10/9":"Plan for 9 Oct"}</button>
+        <button class="btn" type="button" data-setfull="${tr.id}" data-d="d10">${zh?"排在 10/10":"Plan for 10 Oct"}</button>
+        ${tr.link?`<a class="btn full" href="${tr.link.url}" target="_blank" rel="noopener">${esc(L(tr.link.label))}</a>`:""}
+      </div>
+    </article>`).join("")}
+  </section>`;
+}
+
+function renderSaved(){
+  const items = AREAS.flatMap(a => a.places.map((p,i)=>({a,p,i}))).filter(x => saved[pid(x.a,x.i)]);
+  const zh = lang === "zh";
+  return `<section class="panel"><h2>${zh?"我的收藏":"Saved places"}</h2>
+    <p>${zh?"在店家右上角按 ♡ 就会存到这里。收藏只存在你自己的手机上。":"Tap ♡ on any place to save it here. Saves stay on your own phone."}</p>
+    ${items.length ? `<div class="places">${items.map(x=>placeCard(x.a,x.p,x.i,true)).join("")}</div>` : `<p class="empty">${zh?"还没有收藏。去「逛逛」挑几家吧。":"Nothing saved yet. Browse Explore and tap ♡."}</p>`}
+  </section>`;
+}
+
+function renderInfo(){
+  const zh = lang === "zh";
+  return `<section class="panel"><h2>${zh?"旅行须知":"Travel info"}</h2>
+    <div class="info"><h3>${zh?"联络我们":"Contact us"}</h3>
+      ${CONTACTS.map(c=>`<div class="tel"><span class="who">${esc(L(c))}</span><b>${esc(L(c.v))}</b>${/\d/.test(L(c.v))?`<button type="button" data-copy="${esc(L(c.v))}">${esc(L(UI.copy))}</button>`:""}</div>`).join("")}</div>
+    <div class="info"><h3>${zh?"酒店地址":"Hotel address"}</h3>
+      <p><b>${esc(HOTEL.name)}</b></p><p class="num">${esc(HOTEL.addr)}</p><p style="font-family:var(--jp)">${esc(HOTEL.addrJp)}</p>
+      <div class="actions"><a class="btn primary" href="${dirUrl(HOTEL.maps,"walking")}" target="_blank" rel="noopener">${ICON.map}${esc(L(UI.walkHome))}</a>
+      <button class="btn" type="button" data-hotel>${ICON.taxi}${esc(L(UI.taxiHome))}</button></div></div>
+    <div class="info"><h3>${zh?"紧急电话":"Emergency"}</h3>
+      <div class="tel"><span class="who">${zh?"警察":"Police"}</span><b>110</b></div>
+      <div class="tel"><span class="who">${zh?"救护车 / 火警":"Ambulance / Fire"}</span><b>119</b></div>
+      <div class="tel"><span class="who">${zh?"日本游客热线（24 小时，中英文）":"Japan Visitor Hotline (24h, EN/CN)"}</span><b>050-3816-2787</b></div></div>
+    <div class="info"><h3>${zh?"天气与穿搭":"Weather"}</h3>
+      <p>${zh?"约 17–27°C，天气偏干。带防风外套、润唇膏和乳液，穿好走的鞋，折叠伞放包里。":"About 17–27°C and dry. Bring a windbreaker, lip balm and lotion, comfy shoes and a folding umbrella."}</p></div>
+    <div class="info"><h3>${zh?"交通":"Getting around"}</h3><ul>
+      <li>${zh?"最近的车站：惠美须町站（堺筋线、阪堺电车），走路 2 分钟。":"Nearest: Ebisucho (Sakaisuji Line, Hankai tram), 2 min walk."}</li>
+      <li>${zh?"去梅田、天王寺的御堂筋线：走约 8 分钟到动物园前站。":"Midosuji Line to Umeda or Tennoji: Dobutsuen-mae, about 8 min walk."}</li>
+      <li>${zh?"去 USJ 的 JR：走约 10 分钟到新今宫站。":"JR for USJ: Shin-Imamiya, about 10 min walk."}</li>
+      <li>${zh?"ICOCA、Suica 等交通卡地铁、JR、电车都能用，iPhone 可以加到钱包。":"ICOCA, Suica and similar IC cards work everywhere; iPhone users can add one to Wallet."}</li></ul></div>
+    <div class="info"><h3>${zh?"免税购物":"Tax-free shopping"}</h3><ul>
+      <li>${zh?"同一家店、同一天、税前满 ¥5,000，结账时出示护照原件。":"Same store, same day, ¥5,000+ before tax. Show your original passport."}</li>
+      <li>${zh?"10 月还是在店里直接免税（日本 11 月起才改成出境时退税）。":"In October it's still deducted at the till (refund-at-departure starts in November)."}</li>
+      <li>${zh?"免税的消耗品会封袋，离开日本前不要拆。":"Tax-free consumables come sealed. Don't open them in Japan."}</li></ul></div>
+    <div class="info"><h3>${zh?"救急日语":"Handy Japanese"}</h3>
+      ${PHRASES.map(p=>`<div class="phrase"><span class="jp">${esc(p.jp)}</span><span class="ro">${esc(p.ro)}</span><span class="mean">${esc(L(p))}</span><button type="button" data-jp="${esc(p.jp)}" data-plain>${zh?"放大":"Show"}</button></div>`).join("")}</div>
+    <details class="info credits"><summary>${zh?"照片来源":"Photo credits"}</summary>
+      <p class="note">${zh?"照片来自 Wikimedia Commons，依各自的授权使用。标示「示意图」的是同一道菜的参考照片，不一定是那家店。":"Photos from Wikimedia Commons, used under their licences. Items marked \"Similar dish\" show the dish, not necessarily that restaurant."}</p>
+      <ul>${Object.entries(PHOTOS).map(([k,p])=>`<li><a href="${esc(p.u)}" target="_blank" rel="noopener">${esc(k)}</a> · ${esc(p.a)} · ${esc(p.l)}</li>`).join("")}</ul>
+    </details>
+  </section>`;
+}
+
+function render(){
+  renderStatic();
+  const v = document.getElementById("view");
+  v.innerHTML = {plan:renderPlan, trips:renderTrips, saved:renderSaved, info:renderInfo}[tab]?.() ?? renderExplore();
+  if (openArea) renderSheet(openArea);
+}
+
+function renderSheet(id){
+  const a = byId(id), zh = lang === "zh";
+  document.getElementById("sheet").innerHTML = `
+    <div class="grab"><i></i><button class="close" type="button" id="sheet-close" aria-label="Close">×</button></div>
+    <div class="s-hero">${photo(a.img)}</div>
+    <div class="s-head"><span class="dist ${a.group==="ride"?"ride":a.group==="past"?"past":""}" style="justify-self:start">${esc(a.visited?L(a.visited)+" · "+L(a.dist):L(a.dist))}</span>
+      <h2 id="sheet-title">${esc(L(a.name))}</h2><p>${esc(L(a.blurb))}</p></div>
+    <div class="addto"><span>${esc(L(UI.addTo))}</span>${["d9","d10"].map(d=>`<button type="button" data-addto="${d}" data-id="${a.id}" aria-pressed="${plans[d].includes(a.id)}" ${plans.full[d]?"disabled":""}>${esc(L(UI[d]))}</button>`).join("")}</div>
+    <div class="box"><b>${esc(L(UI.fromHotel))}</b><p>${esc(L(a.how))}</p></div>
+    <div class="sec"><h4>${esc(L(UI.picks))}</h4><div class="places">${a.places.map((p,i)=>placeCard(a,p,i,false)).join("")}</div></div>
+    <div class="sec"><h4>${esc(L(UI.tips))}</h4><div class="tip">${L(a.tips).map(t=>`<p>${esc(t)}</p>`).join("")}</div></div>
+    <div class="gohome"><b>${esc(L(UI.goHome))}</b><div class="actions">
+      <a class="btn primary" href="${dirUrl(HOTEL.maps, a.mode)}" target="_blank" rel="noopener">${ICON.map}${esc(L(UI.walkHome))}</a>
+      <button class="btn" type="button" data-hotel>${ICON.taxi}${esc(L(UI.taxiHome))}</button></div></div>`;
+}
+function openSheet(id){
+  openArea = id; renderSheet(id);
+  const sh = document.getElementById("sheet");
+  sh.classList.add("open"); sh.setAttribute("aria-hidden","false"); sh.scrollTop = 0;
+  document.getElementById("scrim").classList.add("open");
+  document.body.style.overflow = "hidden";
+  setTimeout(()=>document.getElementById("sheet-close")?.focus({preventScroll:true}), 50);
+}
+function closeSheet(){
+  const id = openArea; openArea = null;
+  const sh = document.getElementById("sheet");
+  sh.classList.remove("open"); sh.setAttribute("aria-hidden","true");
+  document.getElementById("scrim").classList.remove("open");
+  document.body.style.overflow = "";
+  document.querySelector(`[data-area="${id}"]`)?.focus({preventScroll:true});
+}
+
+let wake = null;
+async function showDriver(jp, addr, q){
+  document.getElementById("driver-jp").textContent = jp;
+  const ad = document.getElementById("driver-addr"); ad.textContent = addr || ""; ad.hidden = !addr;
+  const m = document.getElementById("driver-map"); m.hidden = !q; if (q) m.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q);
+  document.getElementById("driver").hidden = false;
+  document.getElementById("driver-close").focus();
+  try { wake = await navigator.wakeLock?.request("screen"); } catch(e) {}
+}
+function hideDriver(){ document.getElementById("driver").hidden = true; try { wake?.release(); } catch(e) {} wake = null; }
+function toast(msg){ const t = document.getElementById("toast"); t.textContent = msg; t.hidden = false; clearTimeout(toast.h); toast.h = setTimeout(()=>t.hidden = true, 1800); }
+function keepScroll(fn){ const y = window.scrollY; fn(); window.scrollTo(0,y); }
+
+function togglePick(day, id){
+  const zh = lang === "zh", list = plans[day];
+  if (list.includes(id)) plans[day] = list.filter(x => x !== id);
+  else if (list.length >= MAX) { toast(zh?`一天最多选 ${MAX} 个`:`Up to ${MAX} per day`); return; }
+  else { plans[day] = [...list, id]; toast(zh?`已加入 ${L(UI[day])}`:`Added to ${L(UI[day])}`); }
+  persist();
+}
+
+document.addEventListener("click", e => {
+  const t = e.target.closest("[data-tab],[data-mood],[data-area],[data-save],[data-jp],[data-hotel],[data-copy],[data-pick],[data-preset],[data-day],[data-full],[data-setfull],[data-addto],[data-clear],#fab,#sheet-close,#scrim,#driver-close,#lang-zh,#lang-en");
+  if (!t || t.disabled) return;
+  const zh = lang === "zh", d = t.dataset;
+  if (d.tab){ if (openArea) closeSheet(); tab = d.tab; history.replaceState(null,"","#"+tab); render(); window.scrollTo({top:document.getElementById("tabs").offsetTop - 4}); }
+  else if (d.mood){ mood = d.mood; render(); }
+  else if (d.area){ if (openArea){ openArea = d.area; renderSheet(openArea); document.getElementById("sheet").scrollTop = 0; } else openSheet(d.area); }
+  else if (d.save){ saved[d.save] = !saved[d.save]; store.set("osaka-saved", saved); keepScroll(render); toast(saved[d.save]?(zh?"已收藏":"Saved"):(zh?"已取消收藏":"Removed")); }
+  else if (d.pick){ togglePick(planDay, d.pick); keepScroll(render); }
+  else if (d.addto){ togglePick(d.addto, d.id); keepScroll(render); }
+  else if (d.preset !== undefined){ plans[planDay] = [...PRESETS[+d.preset].ids]; persist(); keepScroll(render); }
+  else if (d.clear !== undefined){ plans[planDay] = []; persist(); keepScroll(render); }
+  else if (d.day){ planDay = d.day; keepScroll(render); }
+  else if (d.full !== undefined){ plans.full[planDay] = d.full || null; persist(); keepScroll(render); }
+  else if (d.setfull){ const o = d.d === "d9" ? "d10" : "d9"; if (plans.full[o] === d.setfull) plans.full[o] = null; plans.full[d.d] = d.setfull; persist(); planDay = d.d; tab = "plan"; render(); window.scrollTo({top:document.getElementById("tabs").offsetTop - 4}); }
+  else if (d.hotel !== undefined || t.id === "fab") showDriver(HOTEL.jp + "までお願いします。", HOTEL.addrJp, HOTEL.maps);
+  else if (d.jp) showDriver(d.jp, "", d.plain !== undefined ? "" : d.q);
+  else if (d.copy){ try { navigator.clipboard.writeText(d.copy).then(()=>toast(L(UI.copied)), ()=>selectText(t)); } catch(err){ selectText(t); } }
+  else if (t.id === "sheet-close" || t.id === "scrim") closeSheet();
+  else if (t.id === "driver-close") hideDriver();
+  else if (t.id === "lang-zh" || t.id === "lang-en"){ lang = t.id === "lang-zh" ? "zh" : "en"; store.set("osaka-lang", lang); render(); }
+});
+function selectText(btn){ const b = btn.parentElement.querySelector("b"); if (!b) return; const r = document.createRange(); r.selectNodeContents(b); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+document.addEventListener("keydown", e => { if (e.key !== "Escape") return; if (!document.getElementById("driver").hidden) hideDriver(); else if (openArea) closeSheet(); });
+
+(function init(){
+  lang = store.get("osaka-lang") || ((navigator.language||"").toLowerCase().startsWith("zh") ? "zh" : "en");
+  if (!plans.full) plans.full = {d9:null,d10:null};
+  const h = location.hash.slice(1);
+  if (["explore","plan","trips","saved","info"].includes(h)) tab = h;
+  render();
+})();
+</script>
+
+</body>
+</html>
