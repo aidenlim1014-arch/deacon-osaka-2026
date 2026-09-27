@@ -125,6 +125,8 @@ h1{margin:0;font-size:30px;line-height:1.2;font-weight:900;text-wrap:balance;let
 .item .meta{display:block;font-size:12px;color:var(--muted);margin:2px 0 4px}
 .noimg{aspect-ratio:1/1;border-radius:12px;background:var(--accent-soft);display:grid;place-items:center;color:var(--accent);font-weight:900;font-size:18px}
 .place.flash{outline:3px solid var(--accent);outline-offset:2px;transition:outline-color 1.2s}
+.warnline{margin:0;font-weight:900;color:var(--warn);background:var(--warn-soft);border-radius:10px;padding:8px 10px;font-size:14px}
+.tag.michelin{background:#B3142B;color:#FFFFFF;font-weight:700}
 .empty{color:var(--muted);font-size:13.5px;padding:20px 0}
 
 /* Sheet */
@@ -326,7 +328,7 @@ const UI = {
   goHome:{zh:"逛完了？回酒店",en:"Done here? Head back"}, walkHome:{zh:"导航回酒店",en:"Directions to hotel"}, taxiHome:{zh:"出租车回酒店",en:"Taxi to hotel"},
   fab:{zh:"回酒店",en:"Hotel"}, addTo:{zh:"加入路线：",en:"Add to plan:"},
   kEat:{zh:"吃",en:"EAT"}, kShop:{zh:"买",en:"SHOP"}, kPhoto:{zh:"拍",en:"PHOTO"}, kDo:{zh:"玩",en:"DO"},
-  xhs:{zh:"小红书热门",en:"Viral pick"}, classic:{zh:"必吃老店",en:"Classic"}, queue:{zh:"要排队",en:"Expect a queue"}, cheap:{zh:"平价",en:"Budget"},
+  xhs:{zh:"小红书热门",en:"Viral pick"}, classic:{zh:"必吃老店",en:"Classic"}, queue:{zh:"要排队",en:"Expect a queue"}, cheap:{zh:"平价",en:"Budget"}, michelin:{zh:"米其林必比登",en:"Michelin Bib Gourmand"},
   price:{zh:"价位",en:"Price"}, hours:{zh:"营业",en:"Hours"}, save:{zh:"收藏",en:"Save"},
   d9:{zh:"10/9 周五",en:"Fri 9 Oct"}, d10:{zh:"10/10 周六",en:"Sat 10 Oct"},
   done:{zh:"好了",en:"Done"}, copy:{zh:"复制",en:"Copy"}, copied:{zh:"已复制",en:"Copied"},
@@ -344,7 +346,7 @@ const AREAS = [
    how:{zh:"出酒店往南走约 8 分钟，看到高高的通天阁就是了。",en:"Walk south about 8 min towards the tall tower."}, mode:"walking",
    places:[
      {k:"kEat",tags:["classic","xhs"],name:{zh:"串炸 达摩 新世界总本店",en:"Kushikatsu Daruma (main store)"},cat:"food",dish:"kushikatsu",jp:"串かつだるま 新世界総本店",img:"p-daruma",q:"串かつだるま 新世界総本店",
-      what:{zh:"大阪串炸的代表，门口有生气的达摩大叔。牛肉、虾、莲藕都好吃。",en:"Osaka's signature kushikatsu, with the famous angry-chef statue outside. Try beef, prawn and lotus root."},price:"¥1,500–3,000",hours:{zh:"约 11:00–22:30",en:"~11:00–22:30"}},
+      what:{zh:"大阪串炸的代表，门口有生气的达摩大叔。牛肉、虾、莲藕都好吃。",en:"Osaka's signature kushikatsu, with the famous angry-chef statue outside. Try beef, prawn and lotus root."},warn:{zh:"酱汁只能蘸一次！咬过的串炸不要再放进酱汁里。想多加酱，用免费的卷心菜舀。",en:"Dip ONCE only! Never put a bitten skewer back in the shared sauce. Use the free cabbage to scoop more."},price:"¥1,500–3,000",hours:{zh:"约 11:00–22:30",en:"~11:00–22:30"}},
      {k:"kEat",tags:["classic","queue"],name:{zh:"八重胜（Jan Jan 横丁）",en:"Yaekatsu (Jan Jan Yokocho)"},cat:"food",dish:"kushikatsu",jp:"八重勝",img:"p-kushikatsu",q:"八重勝 新世界",
       what:{zh:"本地人排队的老店，面衣薄脆。门口常排队，但翻桌很快。",en:"A local favourite with light, crisp batter. The queue moves fast."},price:"¥1,500–3,000",hours:{zh:"约 10:30–20:30，周四休",en:"~10:30–20:30, closed Thu"}},
      {k:"kPhoto",tags:[],name:{zh:"通天阁",en:"Tsutenkaku Tower"},cat:"sight",jp:"通天閣",img:"p-tsutenkaku",q:"通天閣",
@@ -411,6 +413,10 @@ const AREAS = [
    places:[
      {k:"kEat",tags:["classic","cheap","queue"],name:{zh:"中村屋 可乐饼",en:"Nakamuraya croquettes"},cat:"food",dish:"snack",jp:"中村屋 コロッケ",img:"p-croquette",q:"中村屋 天神橋 コロッケ",
       what:{zh:"排队的现炸可乐饼，一个才一百多日元，热热吃最好。",en:"Freshly fried croquettes for around ¥100 each. Eat them hot."},price:{zh:"约 ¥100 起",en:"From ~¥100"},hours:{zh:"约 9:00–18:30，周日常休",en:"~9:00–18:30, usually closed Sun"}},
+     {k:"kEat",tags:["classic"],name:{zh:"炭烧鳗鱼 鱼伊 天五店",en:"Uoi Tengo (charcoal-grilled eel)"},cat:"food",dish:"unagi",jp:"炭焼きうなぎの魚伊 天五店",q:"炭焼きうなぎの魚伊 天五店",
+      what:{zh:"1867 年创业的鳗鱼老字号，在天神桥筋五丁目。关西风炭烤，外皮香脆、肉质弹牙。也有鳗鱼蛋卷（う巻）。",en:"Eel specialists since 1867, on Tenjinbashisuji 5-chome. Kansai-style charcoal grilling gives crisp skin and springy flesh. Try the eel omelette (umaki) too."},price:{zh:"鳗鱼饭属于高价位，看菜单",en:"Eel rice is pricey; check the menu"},hours:{zh:"出发前请确认",en:"Check before going"}},
+     {k:"kEat",tags:["michelin"],name:{zh:"天妇罗 天星",en:"Tempura Tenboshi"},cat:"food",dish:"tempura",jp:"天ぷら 天星",q:"天ぷら 天星 天神橋筋六丁目",
+      what:{zh:"米其林必比登推荐的天妇罗店，是米其林二星「ぬま田」的姊妹店。只有 10 个吧台位，吃套餐，炸得非常干净不油腻。建议先预约。",en:"A Michelin Bib Gourmand tempura counter, sister to two-star Numata. Just 10 seats, set courses only, and beautifully light frying. Book ahead."},price:{zh:"晚餐套餐约 ¥5,500 / 人",en:"Dinner course ~¥5,500 pp"},hours:{zh:"午餐、晚餐都是套餐，需预约",en:"Lunch & dinner courses; reservation advised"}},
      {k:"kPhoto",tags:[],name:{zh:"大阪天满宫",en:"Osaka Tenmangu Shrine"},cat:"sight",jp:"大阪天満宮",q:"大阪天満宮",
       what:{zh:"供奉学问之神，就在商店街二丁目旁边，逛到这里刚好。",en:"A shrine to the god of learning, right by the arcade's 2-chome end."},price:{zh:"免费",en:"Free"},hours:{zh:"白天",en:"Daytime"}},
      {k:"kShop",tags:["cheap"],name:{zh:"商店街的药妆与杂货",en:"Arcade drugstores and variety shops"},cat:"drug",jp:"天神橋筋商店街",img:"p-tenjin-arcade",q:"天神橋筋商店街",
@@ -426,7 +432,13 @@ const AREAS = [
      {k:"kShop",tags:[],name:{zh:"LUCUA osaka",en:"LUCUA osaka"},cat:"dept",jp:"ルクア大阪",q:"ルクア大阪",
       what:{zh:"就在 JR 大阪站里，日系女装品牌集中。想找特定品牌先查官网楼层。",en:"Inside JR Osaka Station, full of Japanese womenswear. Check the floor guide online."},price:{zh:"随心",en:"Up to you"},hours:{zh:"约 10:00–20:30",en:"~10:00–20:30"}},
      {k:"kEat",tags:["xhs","queue"],name:{zh:"HARBS 大丸梅田店（水果千层）",en:"HARBS Daimaru Umeda (fruit crêpe cake)"},cat:"food",dish:"sweets",jp:"HARBS 大丸梅田店",img:"p-harbs",q:"HARBS 大丸梅田店",
-      what:{zh:"招牌水果千层蛋糕，一片很大，两个人分刚好。",en:"The famous fruit mille crêpe, big enough to share."},price:"¥1,500–2,500",hours:"11:00–20:00"},
+      what:{zh:"招牌水果千层蛋糕，一片很大，两个人分刚好。奶油很轻、不甜腻。",en:"The famous fruit mille crêpe, big enough to share. Light, not-too-sweet cream."},price:"¥1,500–2,500",hours:"11:00–20:00"},
+     {k:"kEat",tags:["xhs","queue"],name:{zh:"bills 大阪（松饼）",en:"bills Osaka (pancakes)"},cat:"food",dish:"sweets",jp:"bills 大阪",q:"bills 大阪 ルクア1100",
+      what:{zh:"来自悉尼的早午餐店，在 LUCUA 1100 的 7 楼，和 JR 大阪站直接连通。招牌是像云一样松软的瑞可塔松饼，炒蛋也很有名。",en:"The Sydney brunch café on LUCUA 1100 7F, connected to JR Osaka Station. Famous for cloud-soft ricotta pancakes and scrambled eggs."},price:"¥1,800–3,000",hours:{zh:"8:30 开门，早餐时段人比较少",en:"Opens 8:30; quieter at breakfast"}},
+     {k:"kEat",tags:["xhs"],name:{zh:"つるとんたん 北新地（超大碗乌冬）",en:"Tsurutontan Kitashinchi (giant udon)"},cat:"food",dish:"udon",jp:"北新地本通り つるとんたん 琴しょう楼",q:"つるとんたん 琴しょう楼",
+      what:{zh:"以超大碗手打乌冬出名，口味很多，寿喜烧乌冬、咖喱牛肉乌冬都很受欢迎。在北新地，从大阪站走过去约 10 分钟。",en:"Famous for enormous bowls of hand-made udon in many flavours; sukiyaki and beef-curry udon are favourites. In Kitashinchi, about 10 min on foot from Osaka Station."},price:"¥1,500–3,000",hours:{zh:"11:00–23:00（周五、六到凌晨 5:00）",en:"11:00–23:00 (Fri–Sat until 5:00)"}},
+     {k:"kEat",tags:["classic","cheap"],name:{zh:"551 蓬莱 梅田分店（肉包）",en:"551 Horai Umeda branches (pork buns)"},cat:"food",dish:"snack",jp:"551蓬莱",q:"551蓬莱 梅田",
+      what:{zh:"大阪名物肉包，梅田车站和百货公司里都有分店，买来当早餐或垫肚子刚好。",en:"Osaka's famous pork buns, with branches in Umeda stations and department stores. Great for breakfast or a snack."},price:"¥200–500",hours:{zh:"依分店而定",en:"Varies by branch"}},
      {k:"kShop",tags:[],name:{zh:"阪急百货 梅田本店",en:"Hankyu Umeda Main Store"},cat:"dept",jp:"阪急うめだ本店",q:"阪急うめだ本店",
       what:{zh:"日本专柜彩妆最齐的百货之一，有免税柜台。",en:"One of Japan's best stores for cosmetics, with a tax-free counter."},price:{zh:"随心",en:"Up to you"},hours:{zh:"约 10:00–20:00",en:"~10:00–20:00"}},
      {k:"kShop",tags:[],name:{zh:"大黑屋 名牌馆 梅田店（中古名牌）",en:"Daikokuya Brand Store Umeda (pre-loved)"},cat:"luxury",jp:"大黒屋ブランド館 梅田店",q:"大黒屋ブランド館 梅田店",
@@ -472,15 +484,19 @@ const AREAS = [
      {k:"kEat",tags:["xhs","cheap","queue"],name:{zh:"老爷爷芝士蛋糕 难波本店",en:"Rikuro Ojisan cheesecake"},cat:"food",dish:"sweets",jp:"りくろーおじさんの店 なんば本店",img:"p-rikuro",q:"りくろーおじさんの店 なんば本店",
       what:{zh:"刚出炉会抖动的日式芝士蛋糕，出炉时店员会摇铃。一整个才一千日元左右。",en:"Wobbly Japanese cheesecake straight from the oven; staff ring a bell when a batch is out. About ¥1,000 a whole cake."},price:"¥1,000",hours:{zh:"约 9:00–20:00",en:"~9:00–20:00"}},
      {k:"kEat",tags:["xhs"],name:{zh:"一兰拉面 道顿堀店",en:"Ichiran Ramen Dotonbori"},cat:"food",dish:"ramen",jp:"一蘭 道頓堀店",img:"p-ichiran",q:"一蘭 道頓堀店本館",
-      what:{zh:"一人一格的豚骨拉面，可以自己选浓淡、辣度、面的软硬。深夜也开。",en:"Tonkotsu ramen in private booths. Choose richness, spice and noodle firmness. Open late."},price:"¥1,200–2,000",hours:{zh:"24 小时",en:"24 hours"}},
+      what:{zh:"一人一格的豚骨拉面，可以自己选浓淡、辣度、面的软硬。24 小时营业，白天常排队 20–40 分钟，深夜去人少很多。",en:"Tonkotsu ramen in private booths. Choose richness, spice and noodle firmness. Open 24 hours; daytime queues run 20–40 min, late night is much quieter."},price:"¥1,200–2,000",hours:{zh:"24 小时",en:"24 hours"}},
      {k:"kEat",tags:["classic"],name:{zh:"章鱼烧 わなか 千日前本店",en:"Takoyaki Wanaka (main store)"},cat:"food",dish:"takoyaki",jp:"たこ焼き わなか 千日前本店",img:"p-takoyaki",q:"わなか 千日前本店",
       what:{zh:"大阪人心中的章鱼烧代表，外酥里软，有多种酱汁口味。",en:"A local benchmark for takoyaki: crisp outside, molten inside, with several sauces."},price:"¥600–1,000",hours:{zh:"约 10:00–21:00",en:"~10:00–21:00"}},
      {k:"kEat",tags:["classic","queue"],name:{zh:"美津の（大阪烧）",en:"Mizuno (okonomiyaki)"},cat:"food",dish:"okonomiyaki",jp:"美津の",img:"p-okonomiyaki",q:"美津の 道頓堀 お好み焼き",
       what:{zh:"米其林推荐的大阪烧老店，山药烧很有名。",en:"A Michelin-listed okonomiyaki institution, famous for its yam version."},price:"¥1,500–2,500",hours:{zh:"约 11:00–22:00",en:"~11:00–22:00"}},
      {k:"kEat",tags:["classic","cheap"],name:{zh:"551 蓬莱 本店（肉包）",en:"551 Horai (pork buns)"},cat:"food",dish:"snack",jp:"551蓬莱 本店",img:"p-551",q:"551蓬莱 本店 難波",
       what:{zh:"大阪人最爱的肉包，现蒸很多汁，可以外带。",en:"Osaka's favourite steamed pork buns. Great to take away."},price:"¥300–1,000",hours:{zh:"约 10:00–21:30",en:"~10:00–21:30"}},
+     {k:"kEat",tags:["classic","queue"],name:{zh:"烧肉 多平（Tahei）",en:"Yakiniku Tahei"},cat:"food",dish:"meat",jp:"焼肉 多平",q:"多平 難波 焼肉",
+      what:{zh:"1957 年开业、快 70 年的烧肉老店，就在南海难波站旁边。招牌是横膈膜肉（Harami）配白饭。店很小，大约 9 个位子，常要排队。",en:"A yakiniku institution since 1957, right by Nankai Namba Station. The signature is harami (skirt steak) with rice. Tiny, about 9 seats, so expect a queue."},price:{zh:"约 ¥4,000–5,000",en:"~¥4,000–5,000"},hours:{zh:"出发前请确认",en:"Check before going"}},
+     {k:"kEat",tags:["classic"],name:{zh:"道顿堀 今井（乌冬）",en:"Dotonbori Imai (udon)"},cat:"food",dish:"udon",jp:"道頓堀 今井 本店",q:"道頓堀 今井 本店",
+      what:{zh:"1946 年开业的乌冬老店，用北海道昆布和鲭鱼干熬的高汤很清甜，招牌是豆皮乌冬（きつねうどん）。本地人从小吃到大。",en:"An udon house since 1946 with a delicate kelp-and-mackerel broth. The signature is kitsune udon with sweet fried tofu. A lifelong local favourite."},price:"¥900–2,000",hours:{zh:"11:30–20:30，周三休",en:"11:30–20:30, closed Wed"}},
      {k:"kEat",tags:["classic"],name:{zh:"蟹道乐 道顿堀本店",en:"Kani Doraku (main store)"},cat:"food",dish:"seafood",jp:"かに道楽 道頓堀本店",img:"p-kanidoraku",q:"かに道楽 道頓堀本店",
-      what:{zh:"会动的大螃蟹招牌就是这家。套餐建议先订位；门口也有外卖烤蟹脚。",en:"Home of the moving crab sign. Book for a set meal, or grab grilled crab legs from the front stall."},price:"¥4,000–10,000",hours:{zh:"午餐到晚上",en:"Lunch to late"}},
+      what:{zh:"会动的大螃蟹招牌就是这家。午餐套餐比晚餐划算很多，体验一样；套餐建议先订位。门口也有外卖烤蟹脚。",en:"Home of the moving crab sign. Lunch sets are much better value than dinner for the same experience; book ahead. Or grab grilled crab legs from the front stall."},price:"¥4,000–10,000",hours:{zh:"午餐到晚上",en:"Lunch to late"}},
      {k:"kShop",tags:[],name:{zh:"唐吉诃德 道顿堀店",en:"Don Quijote Dotonbori"},cat:"drug",jp:"ドン・キホーテ道頓堀店",q:"ドン・キホーテ道頓堀店",
       what:{zh:"有摩天轮的那栋。药妆、零食、伴手礼集中在一家买，只排一次免税队。",en:"The one with the Ferris wheel. Buy everything in one go and queue for tax-free once."},price:{zh:"看清单",en:"Your list"},hours:{zh:"营业到深夜",en:"Open very late"}}
    ],
@@ -517,7 +533,7 @@ const CATS = [
   {id:"fun",zh:"玩乐 · 参拜",en:"Things to do"}
 ];
 const DISHES = {kushikatsu:{zh:"串炸",en:"Kushikatsu"},takoyaki:{zh:"章鱼烧",en:"Takoyaki"},okonomiyaki:{zh:"大阪烧",en:"Okonomiyaki"},ramen:{zh:"拉面",en:"Ramen"},
-  meat:{zh:"牛肉",en:"Beef"},seafood:{zh:"海鲜",en:"Seafood"},sweets:{zh:"甜点",en:"Sweets"},snack:{zh:"小吃",en:"Snacks"},yoshoku:{zh:"蛋包饭",en:"Omurice"}};
+  meat:{zh:"牛肉",en:"Beef"},seafood:{zh:"海鲜",en:"Seafood"},sweets:{zh:"甜点",en:"Sweets"},snack:{zh:"小吃",en:"Snacks"},yoshoku:{zh:"蛋包饭",en:"Omurice"},udon:{zh:"乌冬",en:"Udon"},unagi:{zh:"鳗鱼",en:"Eel"},tempura:{zh:"天妇罗",en:"Tempura"}};
 
 const PRESETS = [
   {name:{zh:"高空与逛街",en:"Sky views & shopping"},ids:["tennoji","umeda","skybldg"]},
@@ -671,6 +687,7 @@ function placeCard(a, p, i, showArea){
       <button class="heart" type="button" data-save="${id}" aria-pressed="${!!saved[id]}" aria-label="${esc(L(UI.save))}">${ICON.heart}</button></div>
     ${p.tags.length?`<div class="tags">${p.tags.map(t=>`<span class="tag ${t}">${esc(L(UI[t]))}</span>`).join("")}</div>`:""}
     <p>${esc(L(p.what))}</p>
+    ${p.warn?`<p class="warnline">${esc(L(p.warn))}</p>`:""}
     <div class="facts"><span>${esc(L(UI.price))} <b>${esc(L(p.price))}</b></span><span>${esc(L(UI.hours))} <b>${esc(L(p.hours))}</b></span></div>
     <div class="actions"><a class="btn primary" href="${dirUrl(p.q, a.mode)}" target="_blank" rel="noopener">${ICON.map}${esc(L(UI.takeMe))}</a>
       <button class="btn" type="button" data-jp="${esc(p.jp)}までお願いします。" data-q="${esc(p.q)}">${ICON.taxi}${esc(L(UI.taxi))}</button></div>
